@@ -58,7 +58,7 @@
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-typescript-to-proptypes": "^1.4.2",
     "concurrently": "^6.2.0",
-    "del-cli": "^4.0.1",
+    "del-cli": "^4.0.0",
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
