@@ -16,13 +16,12 @@
     "material-ui",
     "mui"
   ],
-  "homepage": "https://baymac.github.io/material-ui-cron",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/baymac/material-ui-cron.git"
+    "url": "git+https://github.com/unitxlabs/material-ui-cron.git"
   },
   "bugs": {
-    "url": "https://github.com/baymac/material-ui-cron/issues"
+    "url": "https://github.com/unitxlabs/material-ui-cron/issues"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
