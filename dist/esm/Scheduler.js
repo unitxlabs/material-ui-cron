@@ -2,6 +2,7 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
+import CronExp from './components/CronExp';
 import CronReader from './components/CronReader';
 import DayOfMonth from './fields/DayOfMonth';
 import Hour from './fields/Hour';
@@ -84,5 +85,5 @@ export default function Scheduler(props) {
     display: "flex",
     flexDirection: "column",
     className: classes.box
-  }, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex > 1 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronReader, null)));
+  }, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex > 1 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronReader, null), React.createElement(CronExp, null)));
 }
