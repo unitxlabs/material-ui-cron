@@ -50,7 +50,7 @@ export default function CronExp() {
   }, [debouncedCronExpInput])
 
   return (
-    <Box display='flex' p={1} m={1}>
+    <Box display='flex' sx={{ display: 'none' }} p={1} m={1}>
       <TextField
         variant='outlined'
         value={cronExpInput}

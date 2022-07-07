@@ -114,6 +114,7 @@ export default function Scheduler(props: SchedulerProps) {
         {periodIndex > 0 && <Hour />}
         <Minute />
         <CronReader />
+        <CronExp />
       </Box>
     </>
   )
