@@ -271,7 +271,7 @@ export const getCronStatus = (msg, hasError) => ({
 });
 export const validateCronExp = cronExp => {
   if (!hasValidCronParts(cronExp)) {
-    return getCronStatus('Cron should have 5 parts', true);
+    return getCronStatus('Cron should have five parts', true);
   }
 
   const minuteValidation = isValidMinutePart(cronExp);

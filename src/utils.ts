@@ -313,8 +313,7 @@ export const getCronStatus = (msg: string, hasError: boolean) => ({
 
 export const validateCronExp = (cronExp: string) => {
   if (!hasValidCronParts(cronExp)) {
-    console.log(cronExp);
-    return getCronStatus('Cron should have 5 parts', true)
+    return getCronStatus('Cron should have five parts', true)
   }
   const minuteValidation = isValidMinutePart(cronExp)
   if (!minuteValidation.isValid) {
