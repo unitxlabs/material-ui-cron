@@ -9,7 +9,7 @@ export declare const isIncreasingSequence: (options: SelectOptions[]) => boolean
 export declare function isAscending(arr: string[]): boolean;
 export declare function getTimesOfTheDayList(): Array<string>;
 export declare function getTimesOfTheDay(): Array<SelectOptions>;
-export declare const hasValidCronParts: (cronExp: string) => boolean;
+export declare const hasValidCronParts: (cronExp: string) => any;
 export declare const getNumbersInCronPart: (part: string) => number[];
 export declare const doesNumberStartWithZero: (part: string) => boolean;
 export declare const hasValidNumbersInCronPart: (part: string, condition: (n: number) => boolean) => boolean;

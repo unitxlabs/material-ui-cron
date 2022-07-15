@@ -44,15 +44,7 @@ export function getTimesOfTheDay() {
     label: time
   }));
 }
-export const hasValidCronParts = cronExp => {
-  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
-
-  if (cronExp in ats) {
-    return true;
-  }
-
-  return cronExp.split(' ').length === 5;
-};
+export const hasValidCronParts = cronExp => cronExp.split(' ').length === 5 || ats.includes(cronExp);
 export const getNumbersInCronPart = part => {
   let numbers = [];
   let tmpNumber = '';
