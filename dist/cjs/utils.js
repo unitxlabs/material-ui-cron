@@ -377,12 +377,6 @@ var getCronStatus = function getCronStatus(msg, hasError) {
 exports.getCronStatus = getCronStatus;
 
 var validateCronExp = function validateCronExp(cronExp) {
-  var ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
-
-  if (ats.includes(cronExp)) {
-    return getCronStatus('', false);
-  }
-
   if (!hasValidCronParts(cronExp)) {
     return getCronStatus('Cron should have five parts', true);
   }

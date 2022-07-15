@@ -308,10 +308,6 @@ export const getCronStatus = (msg: string, hasError: boolean) => ({
 })
 
 export const validateCronExp = (cronExp: string) => {
-  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly']
-  if (ats.includes(cronExp)) {
-    return getCronStatus('', false)
-  }
   if (!hasValidCronParts(cronExp)) {
     return getCronStatus('Cron should have five parts', true)
   }

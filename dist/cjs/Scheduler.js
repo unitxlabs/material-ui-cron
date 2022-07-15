@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = Scheduler;
 
-var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
-
 var _styles = require("@material-ui/styles");
 
 var _react = _interopRequireDefault(require("react"));
@@ -120,9 +118,5 @@ function Scheduler(props) {
     }
   }, [locale, customLocale]);
 
-  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Box["default"], {
-    display: "flex",
-    flexDirection: "column",
-    className: classes.box
-  }, _react["default"].createElement(_Period["default"], null), periodIndex > 3 && _react["default"].createElement(_Month["default"], null), periodIndex > 2 && _react["default"].createElement(_DayOfMonth["default"], null), periodIndex > 1 && _react["default"].createElement(_Week["default"], null), periodIndex > 0 && _react["default"].createElement(_Hour["default"], null), _react["default"].createElement(_Minute["default"], null), _react["default"].createElement(_CronReader["default"], null), _react["default"].createElement(_CronExp["default"], null)));
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", null, _react["default"].createElement(_Period["default"], null), periodIndex > 3 && _react["default"].createElement(_Month["default"], null), periodIndex > 2 && _react["default"].createElement(_DayOfMonth["default"], null), periodIndex > 1 && _react["default"].createElement(_Week["default"], null), periodIndex > 0 && _react["default"].createElement(_Hour["default"], null), _react["default"].createElement(_Minute["default"], null), _react["default"].createElement(_CronReader["default"], null), _react["default"].createElement(_CronExp["default"], null)));
 }

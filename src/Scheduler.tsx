@@ -107,7 +107,7 @@ export default function Scheduler(props: SchedulerProps) {
 
   return (
     <>
-      <Box display='flex' flexDirection='column' className={classes.box}>
+      <div>
         <Period />
         {periodIndex > 3 && <Month />}
         {periodIndex > 2 && <DayOfMonth />}
@@ -116,7 +116,7 @@ export default function Scheduler(props: SchedulerProps) {
         <Minute />
         <CronReader />
         <CronExp />
-      </Box>
+      </div>
     </>
   )
 }

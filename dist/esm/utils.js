@@ -264,12 +264,6 @@ export const getCronStatus = (msg, hasError) => ({
   message: msg
 });
 export const validateCronExp = cronExp => {
-  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
-
-  if (ats.includes(cronExp)) {
-    return getCronStatus('', false);
-  }
-
   if (!hasValidCronParts(cronExp)) {
     return getCronStatus('Cron should have five parts', true);
   }
