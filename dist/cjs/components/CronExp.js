@@ -58,7 +58,6 @@ var useStyles = (0, _styles.makeStyles)({
 
 function CronExp() {
   var classes = useStyles();
-  var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   var _useRecoilState = (0, _recoil.useRecoilState)(_selector.cronExpState),
       _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
@@ -106,7 +105,6 @@ function CronExp() {
       classes: {
         root: classes.label
       }
-    },
-    disabled: !isAdmin
+    }
   }));
 }

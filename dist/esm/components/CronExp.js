@@ -2,10 +2,10 @@ import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import useDebounce from '../hooks/useDebounce';
 import { cronExpState } from '../selector';
-import { cronExpInputState, isAdminState } from '../store';
+import { cronExpInputState } from '../store';
 const useStyles = makeStyles({
   cron: {
     marginRight: '6px',
@@ -28,7 +28,6 @@ const useStyles = makeStyles({
 });
 export default function CronExp() {
   const classes = useStyles();
-  const isAdmin = useRecoilValue(isAdminState);
   const [cronExp, setCronExp] = useRecoilState(cronExpState);
   const [cronExpInput, setCronExpInput] = useRecoilState(cronExpInputState);
   const debouncedCronExpInput = useDebounce(cronExpInput, 500);
@@ -64,7 +63,6 @@ export default function CronExp() {
       classes: {
         root: classes.label
       }
-    },
-    disabled: !isAdmin
+    }
   }));
 }

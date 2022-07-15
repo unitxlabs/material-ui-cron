@@ -73,8 +73,6 @@ function Scheduler(props) {
       setPeriodIndex = _React$useState2[1];
 
   var setCronExp = (0, _recoil.useSetRecoilState)(_selector.cronExpState);
-  var cronError = (0, _recoil.useRecoilValue)(_store.cronValidationErrorMessageState);
-  var setIsAdmin = (0, _recoil.useSetRecoilState)(_store.isAdminState);
 
   var _useRecoilState = (0, _recoil.useRecoilState)(_store.cronExpInputState),
       _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
@@ -91,24 +89,12 @@ function Scheduler(props) {
   var resetPeriod = (0, _recoil.useResetRecoilState)(_store.periodState);
 
   _react["default"].useEffect(function () {
-    setCronError(cronError);
-  }, [cronError]);
-
-  _react["default"].useEffect(function () {
     setPeriodIndex((0, _utils.getPeriodIndex)(period));
   }, [period]);
 
   _react["default"].useEffect(function () {
     setCron(cronExpInput);
   }, [cronExpInput]);
-
-  _react["default"].useEffect(function () {
-    if (isAdmin) {
-      setIsAdmin(isAdmin);
-    } else {
-      setIsAdmin(false);
-    }
-  }, [isAdmin]);
 
   _react["default"].useEffect(function () {
     setCronExpInput(cron);

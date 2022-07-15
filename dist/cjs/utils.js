@@ -99,6 +99,12 @@ function getTimesOfTheDay() {
 }
 
 var hasValidCronParts = function hasValidCronParts(cronExp) {
+  var ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
+
+  if (cronExp in ats) {
+    return true;
+  }
+
   return cronExp.split(' ').length === 5;
 };
 
