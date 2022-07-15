@@ -45,8 +45,7 @@ export function getTimesOfTheDay() {
   }));
 }
 export const hasValidCronParts = cronExp => {
-  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
-  return cronExp.split(' ').length === 5 || ats.includes(cronExp);
+  return cronExp.split(' ').length === 5;
 };
 export const getNumbersInCronPart = part => {
   let numbers = [];
@@ -265,6 +264,12 @@ export const getCronStatus = (msg, hasError) => ({
   message: msg
 });
 export const validateCronExp = cronExp => {
+  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly'];
+
+  if (ats.includes(cronExp)) {
+    return getCronStatus('', false);
+  }
+
   if (!hasValidCronParts(cronExp)) {
     return getCronStatus('Cron should have five parts', true);
   }
