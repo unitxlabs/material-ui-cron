@@ -46,8 +46,8 @@ export default function Scheduler(props: SchedulerProps) {
 
   const setCronExp = useSetRecoilState(cronExpState)
 
-  const cronError = useRecoilValue(cronValidationErrorMessageState)
-  const setIsAdmin = useSetRecoilState(isAdminState)
+  //const cronError = useRecoilValue(cronValidationErrorMessageState)
+  //const setIsAdmin = useSetRecoilState(isAdminState)
 
   const [cronExpInput, setCronExpInput] = useRecoilState(cronExpInputState)
   const setResolvedLocale = useSetRecoilState(localeState)
@@ -60,10 +60,10 @@ export default function Scheduler(props: SchedulerProps) {
   const resetMonth = useResetRecoilState(monthState)
   const resetPeriod = useResetRecoilState(periodState)
 
-  React.useEffect(() => {
+  /*React.useEffect(() => {
     setCronError(cronError)
   }, [cronError])
-
+    */
   React.useEffect(() => {
     setPeriodIndex(getPeriodIndex(period))
   }, [period])
@@ -72,6 +72,7 @@ export default function Scheduler(props: SchedulerProps) {
     setCron(cronExpInput)
   }, [cronExpInput])
 
+    /*
   React.useEffect(() => {
     if (isAdmin) {
       setIsAdmin(isAdmin)
@@ -79,7 +80,7 @@ export default function Scheduler(props: SchedulerProps) {
       setIsAdmin(false)
     }
   }, [isAdmin])
-
+    */
   React.useEffect(() => {
     setCronExpInput(cron)
     return () => {

@@ -5,7 +5,7 @@ import React from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import useDebounce from '../hooks/useDebounce'
 import { cronExpState } from '../selector'
-import { cronExpInputState, isAdminState } from '../store'
+import { cronExpInputState } from '../store'
 
 const useStyles = makeStyles({
   cron: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 export default function CronExp() {
   const classes = useStyles()
 
-  const isAdmin = useRecoilValue(isAdminState)
+  //const isAdmin = useRecoilValue(isAdminState)
 
   const [cronExp, setCronExp] = useRecoilState(cronExpState)
 
@@ -69,7 +69,6 @@ export default function CronExp() {
             root: classes.label,
           },
         }}
-        disabled={!isAdmin}
       />
     </Box>
   )

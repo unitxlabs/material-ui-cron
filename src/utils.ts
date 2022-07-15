@@ -62,9 +62,13 @@ export function getTimesOfTheDay(): Array<SelectOptions> {
   }))
 }
 
-export const hasValidCronParts = (cronExp: string) =>
-  cronExp.split(' ').length === 5
-
+export const hasValidCronParts = (cronExp: string) => {
+  const ats = ['@yearly', '@annually', '@daily', '@hourly', '@weekly', '@monthly']
+  if (cronExp in ats) {
+    return true
+  }
+  return cronExp.split(' ').length === 5
+}
 export const getNumbersInCronPart = (part: string) => {
   let numbers = []
   let tmpNumber = ''
