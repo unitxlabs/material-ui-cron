@@ -29,6 +29,9 @@ export default function Period() {
   }, React.createElement(Typography, {
     classes: {
       root: classes.every
+    },
+    style: {
+      alignSelf: center
     }
   }, resolvedLocale.everyText), React.createElement(CustomSelect, {
     single: true,

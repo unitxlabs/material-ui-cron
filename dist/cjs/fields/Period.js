@@ -66,6 +66,9 @@ function Period() {
   }, _react["default"].createElement(_Typography["default"], {
     classes: {
       root: classes.every
+    },
+    style: {
+      alignSelf: center
     }
   }, resolvedLocale.everyText), _react["default"].createElement(_CustomSelect["default"], {
     single: true,
