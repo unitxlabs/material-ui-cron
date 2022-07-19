@@ -44,6 +44,9 @@ var useStyles = (0, _styles.makeStyles)({
     minWidth: 200,
     marginRight: '6px',
     maxWidth: 200
+  },
+  every: {
+    margin: '0 5px 0 0'
   }
 });
 
@@ -58,9 +61,14 @@ function Period() {
   var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, _react["default"].createElement(_Typography["default"], {
+    classes: {
+      root: classes.every
+    },
     style: {
       alignSelf: 'center'
     }

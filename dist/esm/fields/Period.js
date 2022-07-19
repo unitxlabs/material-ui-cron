@@ -12,6 +12,9 @@ const useStyles = makeStyles({
     minWidth: 200,
     marginRight: '6px',
     maxWidth: 200
+  },
+  every: {
+    margin: '0 5px 0 0'
   }
 });
 export default function Period() {
@@ -21,9 +24,14 @@ export default function Period() {
   const resolvedLocale = useRecoilValue(localeState);
   return React.createElement(Box, {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, React.createElement(Typography, {
+    classes: {
+      root: classes.every
+    },
     style: {
       alignSelf: 'center'
     }
