@@ -32,7 +32,7 @@ export default function Period() {
 
   return (
     <Box display='flex' p={1} m={1}>
-      <Typography classes={{ root: classes.every }} style={{alignSelf: center}}>
+      <Typography classes={{ root: classes.every }} style={{alignSelf: 'center'}}>
         {resolvedLocale.everyText}
       </Typography>
       <CustomSelect

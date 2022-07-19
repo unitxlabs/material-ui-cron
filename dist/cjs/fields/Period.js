@@ -68,7 +68,7 @@ function Period() {
       root: classes.every
     },
     style: {
-      alignSelf: center
+      alignSelf: 'center'
     }
   }, resolvedLocale.everyText), _react["default"].createElement(_CustomSelect["default"], {
     single: true,

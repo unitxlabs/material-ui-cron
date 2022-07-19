@@ -31,7 +31,7 @@ export default function Period() {
       root: classes.every
     },
     style: {
-      alignSelf: center
+      alignSelf: 'center'
     }
   }, resolvedLocale.everyText), React.createElement(CustomSelect, {
     single: true,
