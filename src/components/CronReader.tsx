@@ -39,7 +39,7 @@ export default function CronReader() {
   }, [cronExp])
 
   return (
-    <Box display='flex' p={1} m={1}>
+    <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       {cronValidationErrorMessage.length === 0 && (
         <Typography variant='h6' style={{ color: '#382B5F' }}>
           {cronHr}

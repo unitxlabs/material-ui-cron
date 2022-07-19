@@ -28,8 +28,10 @@ export default function CronReader() {
   }, [cronExp]);
   return React.createElement(Box, {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, cronValidationErrorMessage.length === 0 && React.createElement(Typography, {
     variant: "h6",
     style: {

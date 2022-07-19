@@ -67,8 +67,10 @@ function CronReader() {
 
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, cronValidationErrorMessage.length === 0 && _react["default"].createElement(_Typography["default"], {
     variant: "h6",
     style: {
