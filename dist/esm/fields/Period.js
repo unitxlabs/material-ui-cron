@@ -12,9 +12,6 @@ const useStyles = makeStyles({
     minWidth: 200,
     marginRight: '6px',
     maxWidth: 200
-  },
-  every: {
-    margin: '8.5px 6px 0 0'
   }
 });
 export default function Period() {
@@ -27,9 +24,6 @@ export default function Period() {
     p: 1,
     m: 1
   }, React.createElement(Typography, {
-    classes: {
-      root: classes.every
-    },
     style: {
       alignSelf: 'center'
     }

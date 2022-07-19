@@ -44,9 +44,6 @@ var useStyles = (0, _styles.makeStyles)({
     minWidth: 200,
     marginRight: '6px',
     maxWidth: 200
-  },
-  every: {
-    margin: '8.5px 6px 0 0'
   }
 });
 
@@ -64,9 +61,6 @@ function Period() {
     p: 1,
     m: 1
   }, _react["default"].createElement(_Typography["default"], {
-    classes: {
-      root: classes.every
-    },
     style: {
       alignSelf: 'center'
     }
