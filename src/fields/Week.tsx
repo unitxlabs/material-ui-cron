@@ -28,7 +28,7 @@ export default function Week() {
   )
 
   return (
-    <Box display='flex' p={1} m={1}>
+    <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <Typography classes={{ root: classes.on }}>
         {resolvedLocale.onText}
       </Typography>

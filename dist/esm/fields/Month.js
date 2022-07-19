@@ -24,8 +24,10 @@ export default function Month() {
   const [monthOptions, setMonthOptions] = React.useState(getMonthOptions(resolvedLocale.shortMonthOptions));
   return React.createElement(Box, {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, React.createElement(Typography, {
     classes: {
       root: classes.in

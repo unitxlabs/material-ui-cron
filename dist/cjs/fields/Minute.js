@@ -161,8 +161,10 @@ function Minute() {
     sx: {
       display: 'none'
     },
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, _react["default"].createElement(_CustomSelect["default"], {
     single: true,
     options: isAdmin ? (0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : (0, _constants.atOptionsNonAdmin)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),

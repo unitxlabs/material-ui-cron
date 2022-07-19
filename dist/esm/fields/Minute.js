@@ -82,8 +82,10 @@ export default function Minute() {
     sx: {
       display: 'none'
     },
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, React.createElement(CustomSelect, {
     single: true,
     options: isAdmin ? atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : atOptionsNonAdmin(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),

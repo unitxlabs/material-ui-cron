@@ -24,8 +24,10 @@ export default function Week() {
   const [weekOptions, setWeekOptions] = React.useState(defaultWeekOptions(resolvedLocale.weekDaysOptions));
   return React.createElement(Box, {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, React.createElement(Typography, {
     classes: {
       root: classes.on

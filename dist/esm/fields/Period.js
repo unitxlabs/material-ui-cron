@@ -32,6 +32,7 @@ export default function Period() {
     classes: {
       root: classes.every
     },
+    mr: 1,
     style: {
       alignSelf: 'center'
     }

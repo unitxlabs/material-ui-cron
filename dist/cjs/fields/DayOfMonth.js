@@ -167,8 +167,10 @@ function DayOfMonth() {
 
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, _react["default"].createElement(_CustomSelect["default"], {
     single: true,
     options: (0, _constants.onEveryOptions)(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel),

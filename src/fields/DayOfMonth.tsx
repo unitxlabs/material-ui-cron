@@ -142,7 +142,7 @@ export default function DayOfMonth() {
   }
 
   return (
-    <Box display='flex' p={1} m={1}>
+    <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <CustomSelect
         single
         options={onEveryOptions(

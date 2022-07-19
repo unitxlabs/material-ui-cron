@@ -67,8 +67,10 @@ function Week() {
 
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
-    p: 1,
-    m: 1
+    pt: 1,
+    pb: 1,
+    mt: 1,
+    mb: 1
   }, _react["default"].createElement(_Typography["default"], {
     classes: {
       root: classes.on
