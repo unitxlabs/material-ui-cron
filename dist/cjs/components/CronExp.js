@@ -84,6 +84,9 @@ function CronExp() {
 
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
+    sx: {
+      display: 'none'
+    },
     p: 1,
     m: 1
   }, _react["default"].createElement(_TextField["default"], {
