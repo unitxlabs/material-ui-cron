@@ -114,7 +114,7 @@ export default function Minute() {
   const resolvedLocale = useRecoilValue(localeState)
 
   return (
-    <Box display='flex' p={1} m={1}>
+    <Box display='flex' sx={{ display: 'none' }} p={1} m={1}>
       <CustomSelect
         single
         options={

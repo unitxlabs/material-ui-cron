@@ -79,6 +79,9 @@ export default function Minute() {
   const resolvedLocale = useRecoilValue(localeState);
   return React.createElement(Box, {
     display: "flex",
+    sx: {
+      display: 'none'
+    },
     p: 1,
     m: 1
   }, React.createElement(CustomSelect, {
