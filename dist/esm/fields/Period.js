@@ -34,7 +34,10 @@ export default function Period() {
     },
     mr: 0.625,
     style: {
-      alignSelf: 'center'
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
   }, resolvedLocale.everyText), React.createElement(CustomSelect, {
     single: true,

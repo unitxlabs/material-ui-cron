@@ -71,7 +71,10 @@ function Period() {
     },
     mr: 0.625,
     style: {
-      alignSelf: 'center'
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
   }, resolvedLocale.everyText), _react["default"].createElement(_CustomSelect["default"], {
     single: true,
