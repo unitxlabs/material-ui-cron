@@ -52,7 +52,6 @@ export default function CronExp() {
   return (
     <Box display='flex' sx={{display: 'none'}} p={1} m={1}>
       <TextField
-        variant='outlined'
         value={cronExpInput}
         onChange={(event) => {
           setCronExpInput(event.target.value)

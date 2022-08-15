@@ -48,7 +48,6 @@ export default function CronExp() {
     p: 1,
     m: 1
   }, React.createElement(TextField, {
-    variant: "outlined",
     value: cronExpInput,
     onChange: event => {
       setCronExpInput(event.target.value);
