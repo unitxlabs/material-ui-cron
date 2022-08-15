@@ -106,7 +106,7 @@ export default function Scheduler(props: SchedulerProps) {
 
   return (
     <>
-      <Box display='flex' flexDirection='column' className={classes.box} style={{position: 'relative', borderStyle: 'none'}}>
+      <Box display='flex' flexDirection='column' className={classes.box} style={{position: 'relative', borderStyle: 'none', paddingLeft: '0px'}}>
         <Period />
         {periodIndex > 3 && <Month />}
         {periodIndex > 2 && <DayOfMonth />}

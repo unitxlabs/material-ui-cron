@@ -140,7 +140,8 @@ function Scheduler(props) {
     className: classes.box,
     style: {
       position: 'relative',
-      borderStyle: 'none'
+      borderStyle: 'none',
+      paddingLeft: '0px'
     }
   }, _react["default"].createElement(_Period["default"], null), periodIndex > 3 && _react["default"].createElement(_Month["default"], null), periodIndex > 2 && _react["default"].createElement(_DayOfMonth["default"], null), periodIndex > 1 && _react["default"].createElement(_Week["default"], null), periodIndex > 0 && _react["default"].createElement(_Hour["default"], null), _react["default"].createElement(_Minute["default"], null), _react["default"].createElement(_CronExp["default"], null), _react["default"].createElement(_CronReader["default"], null)));
 }
