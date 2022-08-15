@@ -1,5 +1,3 @@
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/styles';
 import React from 'react';
 import { useRecoilState, useRecoilValue, useResetRecoilState, useSetRecoilState } from 'recoil';
 import CronExp from './components/CronExp';
@@ -14,11 +12,6 @@ import { supportedLanguages } from './i18n';
 import { cronExpState } from './selector';
 import { cronExpInputState, cronValidationErrorMessageState, dayOfMonthState, hourState, isAdminState, localeState, minuteState, monthState, periodState, weekState } from './store';
 import { getPeriodIndex } from './utils';
-const useStyles = makeStyles({
-  box: {
-    minHeight: 'min-content'
-  }
-});
 export default function Scheduler(props) {
   const {
     cron,
@@ -28,7 +21,6 @@ export default function Scheduler(props) {
     locale,
     customLocale
   } = props;
-  const classes = useStyles();
   const period = useRecoilValue(periodState);
   const [periodIndex, setPeriodIndex] = React.useState(0);
   const setCronExp = useSetRecoilState(cronExpState);
@@ -81,9 +73,5 @@ export default function Scheduler(props) {
       setResolvedLocale(supportedLanguages['en']);
     }
   }, [locale, customLocale]);
-  return React.createElement(React.Fragment, null, React.createElement(Box, {
-    display: "flex",
-    flexDirection: "column",
-    className: classes.box
-  }, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex > 1 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronExp, null), React.createElement(CronReader, null)));
+  return React.createElement(React.Fragment, null, React.createElement("div", null, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex > 1 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronExp, null), React.createElement(CronReader, null)));
 }
