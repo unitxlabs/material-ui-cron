@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = Period;
 
-var _Box = _interopRequireDefault(require("@material-ui/core/Box/Box"));
+var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
 
 var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
 
