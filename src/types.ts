@@ -1,4 +1,4 @@
-import { AutocompleteRenderGetTagProps } from '@material-ui/core'
+import { AutocompleteRenderGetTagProps } from '@mui/material'
 import { SetterOrUpdater } from 'recoil'
 
 export type PeriodType = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute'

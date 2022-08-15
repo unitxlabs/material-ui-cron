@@ -19,8 +19,8 @@ Live **demo** and **usage** at
 Be sure that you have these dependencies on your project:
 
 - react (>=17.0.1)
-- @material-ui/core (>5.0.0-beta.1)
-- @material-ui/styles: (>5.0.0-beta.1)
+- @mui/material (>5.0.0-beta.1)
+- @mui/styles: (>5.0.0-beta.1)
 
 More dependencies
 

@@ -1,5 +1,5 @@
-import Box from '@material-ui/core/Box'
-import { makeStyles } from '@material-ui/styles'
+import Box from '@mui/material/Box'
+import { makeStyles } from '@mui/styles'
 import React from 'react'
 import {
   useRecoilState,

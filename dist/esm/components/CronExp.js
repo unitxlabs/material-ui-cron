@@ -1,6 +1,6 @@
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/styles';
-import TextField from '@material-ui/core/TextField';
+import Box from '@mui/material/Box';
+import { makeStyles } from '@mui/styles';
+import TextField from '@mui/material/TextField';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import useDebounce from '../hooks/useDebounce';

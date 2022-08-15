@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = CustomSelect;
 
-var _Chip = _interopRequireDefault(require("@material-ui/core/Chip"));
+var _Chip = _interopRequireDefault(require("@mui/material/Chip"));
 
-var _TextField = _interopRequireDefault(require("@material-ui/core/TextField"));
+var _TextField = _interopRequireDefault(require("@mui/material/TextField"));
 
-var _Autocomplete = _interopRequireDefault(require("@material-ui/core/Autocomplete"));
+var _Autocomplete = _interopRequireDefault(require("@mui/material/Autocomplete"));
 
 var _react = _interopRequireDefault(require("react"));
 

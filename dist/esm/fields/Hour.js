@@ -4,9 +4,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-import Box from '@material-ui/core/Box';
-import { makeStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
+import Box from '@mui/material/Box';
+import { makeStyles } from '@mui/styles';
+import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';

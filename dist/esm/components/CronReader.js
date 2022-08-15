@@ -1,6 +1,6 @@
-import { makeStyles, createStyles } from '@material-ui/styles';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, createStyles } from '@mui/styles';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import cronstrue from 'cronstrue/i18n';
 import React from 'react';
 import { useRecoilValue } from 'recoil';

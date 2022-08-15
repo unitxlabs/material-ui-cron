@@ -5,11 +5,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = CronReader;
 
-var _styles = require("@material-ui/styles");
+var _styles = require("@mui/styles");
 
-var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
+var _Box = _interopRequireDefault(require("@mui/material/Box"));
 
-var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
+var _Typography = _interopRequireDefault(require("@mui/material/Typography"));
 
 var _i18n = _interopRequireDefault(require("cronstrue/i18n"));
 

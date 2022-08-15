@@ -1,8 +1,8 @@
-import Chip from '@material-ui/core/Chip'
-import TextField from '@material-ui/core/TextField'
+import Chip from '@mui/material/Chip'
+import TextField from '@mui/material/TextField'
 import Autocomplete, {
   AutocompleteChangeReason,
-} from '@material-ui/core/Autocomplete'
+} from '@mui/material/Autocomplete'
 import React from 'react'
 import { CustomSelectProps, SelectOptions } from '../types'
 import { getSortedOptions } from '../utils'
