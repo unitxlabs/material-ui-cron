@@ -5,6 +5,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = Scheduler;
 
+var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
+
+var _styles = require("@material-ui/styles");
+
 var _react = _interopRequireDefault(require("react"));
 
 var _recoil = require("recoil");
@@ -47,6 +51,12 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+var useStyles = (0, _styles.makeStyles)({
+  box: {
+    minHeight: 'min-content'
+  }
+});
+
 function Scheduler(props) {
   var cron = props.cron,
       setCron = props.setCron,
@@ -54,6 +64,7 @@ function Scheduler(props) {
       isAdmin = props.isAdmin,
       locale = props.locale,
       customLocale = props.customLocale;
+  var classes = useStyles();
   var period = (0, _recoil.useRecoilValue)(_store.periodState);
 
   var _React$useState = _react["default"].useState(0),
@@ -123,5 +134,13 @@ function Scheduler(props) {
     }
   }, [locale, customLocale]);
 
-  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", null, _react["default"].createElement(_Period["default"], null), periodIndex > 3 && _react["default"].createElement(_Month["default"], null), periodIndex > 2 && _react["default"].createElement(_DayOfMonth["default"], null), periodIndex > 1 && _react["default"].createElement(_Week["default"], null), periodIndex > 0 && _react["default"].createElement(_Hour["default"], null), _react["default"].createElement(_Minute["default"], null), _react["default"].createElement(_CronExp["default"], null), _react["default"].createElement(_CronReader["default"], null)));
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Box["default"], {
+    display: "flex",
+    flexDirection: "column",
+    className: classes.box,
+    style: {
+      position: 'relative',
+      borderStyle: 'none'
+    }
+  }, _react["default"].createElement(_Period["default"], null), periodIndex > 3 && _react["default"].createElement(_Month["default"], null), periodIndex > 2 && _react["default"].createElement(_DayOfMonth["default"], null), periodIndex > 1 && _react["default"].createElement(_Week["default"], null), periodIndex > 0 && _react["default"].createElement(_Hour["default"], null), _react["default"].createElement(_Minute["default"], null), _react["default"].createElement(_CronExp["default"], null), _react["default"].createElement(_CronReader["default"], null)));
 }
