@@ -67,6 +67,8 @@ var useStyles = (0, _styles.makeStyles)({
 
 function Hour() {
   var classes = useStyles();
+  var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
+  var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
 
   var _useRecoilState = (0, _recoil.useRecoilState)(_store.hourAtEveryState),
       _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
@@ -127,8 +129,6 @@ function Hour() {
     setPossibleStartTimes(limitedPossibleTimeRange);
   }, [endHour]);
 
-  var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
-
   _react["default"].useEffect(function () {
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
@@ -151,7 +151,6 @@ function Hour() {
     }
   }, [isAdmin]);
 
-  var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
     pt: 1,

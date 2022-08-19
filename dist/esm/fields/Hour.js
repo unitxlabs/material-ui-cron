@@ -35,6 +35,8 @@ const useStyles = makeStyles({
 });
 export default function Hour() {
   const classes = useStyles();
+  const isAdmin = useRecoilValue(isAdminState);
+  const resolvedLocale = useRecoilValue(localeState);
   const [hourAtEvery, setHourAtEvery] = useRecoilState(hourAtEveryState);
   const [startHour, setStartHour] = useRecoilState(hourRangeStartSchedulerState);
   const [endHour, setEndHour] = useRecoilState(hourRangeEndSchedulerState);
@@ -56,7 +58,6 @@ export default function Hour() {
     }));
     setPossibleStartTimes(limitedPossibleTimeRange);
   }, [endHour]);
-  const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
@@ -75,7 +76,6 @@ export default function Hour() {
       setHour(prevHour => [prevHour[0]]);
     }
   }, [isAdmin]);
-  const resolvedLocale = useRecoilValue(localeState);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,
