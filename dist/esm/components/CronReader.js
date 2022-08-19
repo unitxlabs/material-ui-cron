@@ -15,17 +15,7 @@ export default function CronReader() {
   const classes = useStyles();
   const cronExp = useRecoilValue(cronExpState);
   const resolvedLocale = useRecoilValue(localeState);
-  const [cronHr, setCronHr] = React.useState('');
   const cronValidationErrorMessage = useRecoilValue(cronValidationErrorMessageState);
-  React.useEffect(() => {
-    try {
-      setCronHr(cronstrue.toString(cronExp, {
-        locale: resolvedLocale.cronDescriptionText
-      }));
-    } catch (e) {
-      setCronHr('Incorrect cron selection');
-    }
-  }, [cronExp]);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,
@@ -37,7 +27,9 @@ export default function CronReader() {
     style: {
       color: '#382B5F'
     }
-  }, cronHr), cronValidationErrorMessage.length > 0 && React.createElement(Typography, {
+  }, cronstrue.toString(cronExp, {
+    locale: resolvedLocale.cronDescriptionText
+  })), cronValidationErrorMessage.length > 0 && React.createElement(Typography, {
     className: classes.error
   }, cronValidationErrorMessage));
 }

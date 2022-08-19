@@ -74,7 +74,6 @@ export const dayOfMonthAtEveryState = atom({
       get
     }) => {
       const resolvedLocale = get(localeState);
-      console.log(resolvedLocale);
       return onEveryOptions(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel)[0];
     }
   })
