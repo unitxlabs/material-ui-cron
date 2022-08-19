@@ -55,6 +55,7 @@ export default function CronExp() {
         variant='outlined'
         value={cronExpInput}
         onChange={(event) => {
+          console.log(event.target.value);
           setCronExpInput(event.target.value)
         }}
         label=''
