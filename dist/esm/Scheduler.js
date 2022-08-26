@@ -68,7 +68,7 @@ export default function Scheduler(props) {
       resetMonth();
       resetPeriod();
     };
-  }, []);
+  }, [cron]);
   React.useEffect(() => {
     if (customLocale) {
       setResolvedLocale(customLocale);

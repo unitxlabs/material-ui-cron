@@ -118,7 +118,7 @@ function Scheduler(props) {
       resetMonth();
       resetPeriod();
     };
-  }, []);
+  }, [cron]);
 
   _react["default"].useEffect(function () {
     if (customLocale) {
