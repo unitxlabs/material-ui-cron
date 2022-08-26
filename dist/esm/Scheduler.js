@@ -60,19 +60,6 @@ export default function Scheduler(props) {
     }
   }, [isAdmin]);
   React.useEffect(() => {
-    setCronExpInput(cron);
-    return () => {
-      setCronExp('0 0 * * 1-5');
-      resetCronExpInput();
-      resetMinute();
-      resetHour();
-      resetDayOfMonth();
-      resetDayOfWeek();
-      resetMonth();
-      resetPeriod();
-    };
-  }, []);
-  React.useEffect(() => {
     if (customLocale) {
       setResolvedLocale(customLocale);
     } else if (locale) {

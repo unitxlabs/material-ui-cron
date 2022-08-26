@@ -111,20 +111,6 @@ function Scheduler(props) {
   }, [isAdmin]);
 
   _react["default"].useEffect(function () {
-    setCronExpInput(cron);
-    return function () {
-      setCronExp('0 0 * * 1-5');
-      resetCronExpInput();
-      resetMinute();
-      resetHour();
-      resetDayOfMonth();
-      resetDayOfWeek();
-      resetMonth();
-      resetPeriod();
-    };
-  }, []);
-
-  _react["default"].useEffect(function () {
     if (customLocale) {
       setResolvedLocale(customLocale);
     } else if (locale) {
