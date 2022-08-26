@@ -50,15 +50,25 @@ export default function Scheduler(props) {
     setPeriodIndex(getPeriodIndex(period));
   }, [period]);
   React.useEffect(() => {
-    setCron(cronExpInput);
-  }, [cronExpInput]);
-  React.useEffect(() => {
     if (isAdmin) {
       setIsAdmin(isAdmin);
     } else {
       setIsAdmin(false);
     }
   }, [isAdmin]);
+  React.useEffect(() => {
+    setCronExpInput(cron);
+    return () => {
+      setCronExp('0 0 * * 1-5');
+      resetCronExpInput();
+      resetMinute();
+      resetHour();
+      resetDayOfMonth();
+      resetDayOfWeek();
+      resetMonth();
+      resetPeriod();
+    };
+  }, []);
   React.useEffect(() => {
     if (customLocale) {
       setResolvedLocale(customLocale);

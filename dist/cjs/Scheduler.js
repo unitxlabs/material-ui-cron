@@ -99,16 +99,26 @@ function Scheduler(props) {
   }, [period]);
 
   _react["default"].useEffect(function () {
-    setCron(cronExpInput);
-  }, [cronExpInput]);
-
-  _react["default"].useEffect(function () {
     if (isAdmin) {
       setIsAdmin(isAdmin);
     } else {
       setIsAdmin(false);
     }
   }, [isAdmin]);
+
+  _react["default"].useEffect(function () {
+    setCronExpInput(cron);
+    return function () {
+      setCronExp('0 0 * * 1-5');
+      resetCronExpInput();
+      resetMinute();
+      resetHour();
+      resetDayOfMonth();
+      resetDayOfWeek();
+      resetMonth();
+      resetPeriod();
+    };
+  }, []);
 
   _react["default"].useEffect(function () {
     if (customLocale) {
