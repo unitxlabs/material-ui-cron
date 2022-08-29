@@ -53,7 +53,6 @@ export default function Scheduler(props: SchedulerProps) {
   const setResolvedLocale = useSetRecoilState(localeState)
 
   const resetCronExpInput = useResetRecoilState(cronExpInputState)
-  const resetMinute = useResetRecoilState(minuteState)
   const resetHour = useResetRecoilState(hourState)
   const resetDayOfMonth = useResetRecoilState(dayOfMonthState)
   const resetDayOfWeek = useResetRecoilState(weekState)
@@ -81,7 +80,6 @@ export default function Scheduler(props: SchedulerProps) {
     return () => {
       setCronExp('0 0 * * 1-5')
       resetCronExpInput()
-      resetMinute()
       resetHour()
       resetDayOfMonth()
       resetDayOfWeek()
@@ -108,7 +106,6 @@ export default function Scheduler(props: SchedulerProps) {
         {periodIndex > 2 && <DayOfMonth />}
         {periodIndex > 1 && <Week />}
         {periodIndex > 0 && <Hour />}
-        <Minute />
         <CronExp />
         <CronReader />
       </Box>
