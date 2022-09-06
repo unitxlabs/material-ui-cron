@@ -21,6 +21,7 @@ import {
   localeState,
 } from '../store'
 import { getTimesOfTheDay } from '../utils'
+import { resolve } from 'dns'
 
 const POSSIBLE_TIME_RANGES = getTimesOfTheDay()
 
@@ -88,8 +89,9 @@ export default function Hour() {
   }, [endHour])
 
   React.useEffect(() => {
-    setHourAtEvery(hourAtEvery)
-    console.log(hourAtEvery)
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]])

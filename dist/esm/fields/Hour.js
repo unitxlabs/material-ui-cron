@@ -59,8 +59,9 @@ export default function Hour() {
     setPossibleStartTimes(limitedPossibleTimeRange);
   }, [endHour]);
   React.useEffect(() => {
-    setHourAtEvery(hourAtEvery);
-    console.log(hourAtEvery);
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
 
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
