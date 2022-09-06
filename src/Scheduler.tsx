@@ -96,7 +96,7 @@ export default function Scheduler(props: SchedulerProps) {
     } else {
       setResolvedLocale(supportedLanguages['en'])
     }
-  }, [locale, customLocale])
+  }, [])
 
   return (
     <>

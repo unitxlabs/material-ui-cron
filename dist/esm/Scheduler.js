@@ -74,7 +74,7 @@ export default function Scheduler(props) {
     } else {
       setResolvedLocale(supportedLanguages['en']);
     }
-  }, [locale, customLocale]);
+  }, []);
   return React.createElement(React.Fragment, null, React.createElement(Box, {
     display: "flex",
     flexDirection: "column",

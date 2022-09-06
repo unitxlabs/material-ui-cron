@@ -124,7 +124,7 @@ function Scheduler(props) {
     } else {
       setResolvedLocale(_i18n.supportedLanguages['en']);
     }
-  }, [locale, customLocale]);
+  }, []);
 
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Box["default"], {
     display: "flex",
