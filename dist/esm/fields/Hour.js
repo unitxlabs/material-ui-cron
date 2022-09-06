@@ -59,6 +59,9 @@ export default function Hour() {
     setPossibleStartTimes(limitedPossibleTimeRange);
   }, [endHour]);
   React.useEffect(() => {
+    setHourAtEvery(hourAtEvery);
+    console.log(hourAtEvery);
+
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]]);

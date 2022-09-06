@@ -88,6 +88,8 @@ export default function Hour() {
   }, [endHour])
 
   React.useEffect(() => {
+    setHourAtEvery(hourAtEvery)
+    console.log(hourAtEvery)
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]])
