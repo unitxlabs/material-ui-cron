@@ -45,6 +45,7 @@ export default function CustomSelect(props) {
     multiple: true,
     options: options,
     value: value,
+    defaultValue: value,
     onChange: handleChange,
     isOptionEqualToValue: (option, val) => option.value === val.value,
     getOptionLabel: option => option.label,

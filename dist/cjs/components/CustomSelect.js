@@ -59,6 +59,7 @@ function CustomSelect(props) {
     multiple: true,
     options: options,
     value: value,
+    defaultValue: value,
     onChange: handleChange,
     isOptionEqualToValue: function isOptionEqualToValue(option, val) {
       return option.value === val.value;

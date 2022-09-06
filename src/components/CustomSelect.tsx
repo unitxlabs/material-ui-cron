@@ -54,6 +54,7 @@ export default function CustomSelect(props: CustomSelectProps) {
         multiple
         options={options}
         value={value}
+        defaultValue={value}
         onChange={handleChange}
         isOptionEqualToValue={(option, val) =>
           (option as SelectOptions).value === (val as SelectOptions).value
