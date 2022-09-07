@@ -2825,6 +2825,13 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@timiscoding/recoil@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@timiscoding/recoil/-/recoil-0.4.1.tgz#8988adfea646c1e7defa46dd4d83e0429eff269a"
+  integrity sha512-N/TRdx6fwHyBdM/sfMgbDKBthEOiremCFoWK8tgev4ny8HlkQ+h7V+vRaIYqv2VG5CVI1sroQblx6NYKAJpj5Q==
+  dependencies:
+    hamt_plus "1.0.2"
+
 "@tootallnate/once@1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
