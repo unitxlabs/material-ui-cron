@@ -59,6 +59,11 @@ export default function Hour() {
   }, [endHour]);
   const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
+  }, [resolvedLocale]);
+  React.useEffect(() => {
     console.log(hourAtEvery);
     console.log(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
 
@@ -73,7 +78,7 @@ export default function Hour() {
     } else {
       setHourOptions(DEFAULT_HOUR_OPTS_AT);
     }
-  }, [hourAtEvery, isAdmin]);
+  }, [hourAtEvery]);
   React.useEffect(() => {
     if (!isAdmin && hour.length > 1) {
       setHour(prevHour => [prevHour[0]]);

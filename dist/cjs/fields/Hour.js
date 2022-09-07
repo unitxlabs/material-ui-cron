@@ -131,6 +131,12 @@ function Hour() {
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   _react["default"].useEffect(function () {
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
+  }, [resolvedLocale]);
+
+  _react["default"].useEffect(function () {
     console.log(hourAtEvery);
     console.log((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
 
@@ -145,7 +151,7 @@ function Hour() {
     } else {
       setHourOptions(_constants.DEFAULT_HOUR_OPTS_AT);
     }
-  }, [hourAtEvery, isAdmin]);
+  }, [hourAtEvery]);
 
   _react["default"].useEffect(function () {
     if (!isAdmin && hour.length > 1) {
