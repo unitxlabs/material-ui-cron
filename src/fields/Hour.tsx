@@ -89,6 +89,7 @@ export default function Hour() {
 
   React.useEffect(() => {
     console.log(hourAtEvery);
+    console.log(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]])

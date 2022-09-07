@@ -60,6 +60,7 @@ export default function Hour() {
   const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
     console.log(hourAtEvery);
+    console.log(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
 
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
