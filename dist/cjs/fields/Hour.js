@@ -137,9 +137,6 @@ function Hour() {
   }, [resolvedLocale]);
 
   _react["default"].useEffect(function () {
-    console.log(hourAtEvery);
-    console.log((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]]);
