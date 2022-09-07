@@ -69,46 +69,40 @@ function Hour() {
   var classes = useStyles();
   var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
 
-  var _useRecoilState = (0, _recoil.useRecoilState)(_store.hourAtEveryState),
-      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
-      hourAtEvery = _useRecoilState2[0],
-      setHourAtEvery = _useRecoilState2[1];
-
-  var _useRecoilState3 = (0, _recoil.useRecoilState)(_store.hourRangeStartSchedulerState),
-      _useRecoilState4 = _slicedToArray(_useRecoilState3, 2),
-      startHour = _useRecoilState4[0],
-      setStartHour = _useRecoilState4[1];
-
-  var _useRecoilState5 = (0, _recoil.useRecoilState)(_store.hourRangeEndSchedulerState),
-      _useRecoilState6 = _slicedToArray(_useRecoilState5, 2),
-      endHour = _useRecoilState6[0],
-      setEndHour = _useRecoilState6[1];
-
-  var _useRecoilState7 = (0, _recoil.useRecoilState)(_store.hourState),
-      _useRecoilState8 = _slicedToArray(_useRecoilState7, 2),
-      hour = _useRecoilState8[0],
-      setHour = _useRecoilState8[1];
-
-  var _React$useState = _react["default"].useState(_constants.defaultHourOptions),
+  var _React$useState = _react["default"].useState((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]),
       _React$useState2 = _slicedToArray(_React$useState, 2),
-      hourOptions = _React$useState2[0],
-      setHourOptions = _React$useState2[1];
+      hourAtEvery = _React$useState2[0],
+      setHourAtEvery = _React$useState2[1];
 
-  var _React$useState3 = _react["default"].useState(POSSIBLE_TIME_RANGES),
+  var _useRecoilState = (0, _recoil.useRecoilState)(_store.hourRangeStartSchedulerState),
+      _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
+      startHour = _useRecoilState2[0],
+      setStartHour = _useRecoilState2[1];
+
+  var _useRecoilState3 = (0, _recoil.useRecoilState)(_store.hourRangeEndSchedulerState),
+      _useRecoilState4 = _slicedToArray(_useRecoilState3, 2),
+      endHour = _useRecoilState4[0],
+      setEndHour = _useRecoilState4[1];
+
+  var _useRecoilState5 = (0, _recoil.useRecoilState)(_store.hourState),
+      _useRecoilState6 = _slicedToArray(_useRecoilState5, 2),
+      hour = _useRecoilState6[0],
+      setHour = _useRecoilState6[1];
+
+  var _React$useState3 = _react["default"].useState(_constants.defaultHourOptions),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      possibleStartTimes = _React$useState4[0],
-      setPossibleStartTimes = _React$useState4[1];
+      hourOptions = _React$useState4[0],
+      setHourOptions = _React$useState4[1];
 
   var _React$useState5 = _react["default"].useState(POSSIBLE_TIME_RANGES),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      possibleEndTimes = _React$useState6[0],
-      setPossibleEndTimes = _React$useState6[1];
+      possibleStartTimes = _React$useState6[0],
+      setPossibleStartTimes = _React$useState6[1];
 
-  _react["default"].useEffect(function () {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
-  }, []);
+  var _React$useState7 = _react["default"].useState(POSSIBLE_TIME_RANGES),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      possibleEndTimes = _React$useState8[0],
+      setPossibleEndTimes = _React$useState8[1];
 
   _react["default"].useEffect(function () {
     var startIndex = possibleStartTimes.findIndex(function (x) {

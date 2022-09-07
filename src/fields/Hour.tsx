@@ -46,7 +46,7 @@ const useStyles = makeStyles({
 export default function Hour() {
   const classes = useStyles()
   const resolvedLocale = useRecoilValue(localeState)
-  const [hourAtEvery, setHourAtEvery] = useRecoilState(hourAtEveryState)
+  const [hourAtEvery, setHourAtEvery] = React.useState(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0])
   const [startHour, setStartHour] = useRecoilState(hourRangeStartSchedulerState)
   const [endHour, setEndHour] = useRecoilState(hourRangeEndSchedulerState)
   const [hour, setHour] = useRecoilState(hourState)
@@ -59,12 +59,6 @@ export default function Hour() {
   const [possibleEndTimes, setPossibleEndTimes] = React.useState(
     POSSIBLE_TIME_RANGES
   )
-
-  React.useEffect(() => {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
-  }, [])
 
   React.useEffect(() => {
     const startIndex = possibleStartTimes.findIndex(
