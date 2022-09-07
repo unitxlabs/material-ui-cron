@@ -6,7 +6,7 @@ import {
   useRecoilValue,
   useResetRecoilState,
   useSetRecoilState,
-} from 'recoil'
+} from '@timiscoding/recoil'
 import CronExp from './components/CronExp'
 import CronReader from './components/CronReader'
 import DayOfMonth from './fields/DayOfMonth'

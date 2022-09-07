@@ -1,4 +1,4 @@
-import { selector } from 'recoil';
+import { selector } from '@timiscoding/recoil';
 import { atEveryOptions, defaultMinuteOptionsWithOrdinal, DEFAULT_DAY_OF_MONTH_OPTS, DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD, DEFAULT_HOUR_OPTS_EVERY, DEFAULT_MINUTE_OPTS, getLastDayOfMonthOption, getMonthOptions, getPeriodOptions, onEveryOptions, weekOptions } from './constants';
 import { cronValidationErrorMessageState, dayOfMonthAtEveryState, dayOfMonthRangeEndSchedulerState, dayOfMonthRangeStartSchedulerState, dayOfMonthState, hourAtEveryState, hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, localeState, minuteAtEveryState, minuteRangeEndSchedulerState, minuteRangeStartSchedulerState, minuteState, monthState, periodState, weekState } from './store';
 import { getMinutesIndex, getPeriodIndex, getTimeIndex, getTimesOfTheDay, isIncreasingSequence, validateCronExp } from './utils';

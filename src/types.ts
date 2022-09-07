@@ -1,5 +1,5 @@
 import { AutocompleteRenderGetTagProps } from '@material-ui/core'
-import { SetterOrUpdater } from 'recoil'
+import { SetterOrUpdater } from '@timiscoding/recoil'
 
 export type PeriodType = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute'
 

@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil'
+import { atom, selector } from '@timiscoding/recoil'
 import {
   atEveryOptions,
   defaultMinuteOptionsWithOrdinal,

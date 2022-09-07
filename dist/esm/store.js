@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { atom, selector } from '@timiscoding/recoil';
 import { atEveryOptions, defaultMinuteOptionsWithOrdinal, DEFAULT_DAY_OF_MONTH_OPTS, DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD, DEFAULT_HOUR_OPTS_EVERY, DEFAULT_MINUTE_OPTS, getMonthOptions, getPeriodOptions, onEveryOptions, weekOptions } from './constants';
 import defaultLocale from './localization/enLocale';
 import { getTimesOfTheDay } from './utils';

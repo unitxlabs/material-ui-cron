@@ -1,5 +1,5 @@
 import React from 'react'
-import { RecoilRoot } from 'recoil'
+import { RecoilRoot } from '@timiscoding/recoil'
 import Scheduler from './Scheduler'
 import { SchedulerProps } from './types'
 

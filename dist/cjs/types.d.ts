@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import { AutocompleteRenderGetTagProps } from '@material-ui/core';
-import { SetterOrUpdater } from 'recoil';
+import { SetterOrUpdater } from '@timiscoding/recoil';
 export declare type PeriodType = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute';
 export interface CustomSelectProps {
     renderTags?: (value: SelectOptions[], getTagProps: AutocompleteRenderGetTagProps) => React.ReactNode;

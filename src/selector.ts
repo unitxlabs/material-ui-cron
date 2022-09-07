@@ -1,4 +1,4 @@
-import { selector, SetRecoilState } from 'recoil'
+import { selector, SetRecoilState } from '@timiscoding/recoil'
 import {
   atEveryOptions,
   defaultMinuteOptionsWithOrdinal,

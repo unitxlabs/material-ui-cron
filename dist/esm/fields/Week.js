@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from '@timiscoding/recoil';
 import Box from '@material-ui/core/Box';
 import CustomSelect from '../components/CustomSelect';
 import { weekOptions as defaultWeekOptions } from '../constants';

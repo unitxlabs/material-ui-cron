@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from '@timiscoding/recoil';
 import CustomSelect from '../components/CustomSelect';
 import { atEveryOptions, atOptionsNonAdmin, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
 import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState, hourAtEveryState } from '../store';
