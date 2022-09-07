@@ -58,6 +58,10 @@ export default function Hour() {
   }, [endHour]);
   const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
+
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]]);

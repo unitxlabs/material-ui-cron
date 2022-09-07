@@ -130,6 +130,10 @@ function Hour() {
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   _react["default"].useEffect(function () {
+    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
+      setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+    }
+
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]]);
