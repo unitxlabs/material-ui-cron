@@ -111,6 +111,7 @@ function Scheduler(props) {
   }, [isAdmin]);
 
   _react["default"].useEffect(function () {
+    setCronExp(cron);
     setCronExpInput(cron);
     return function () {
       setCronExp('0 0 * * 1-5');
