@@ -13,7 +13,6 @@ import {
   DEFAULT_HOUR_OPTS_EVERY,
 } from '../constants'
 import {
-  hourAtEveryState,
   hourRangeEndSchedulerState,
   hourRangeStartSchedulerState,
   hourState,
@@ -89,6 +88,7 @@ export default function Hour() {
   const isAdmin = useRecoilValue(isAdminState)
 
   React.useEffect(() => {
+    console.log(hourAtEvery);
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]])

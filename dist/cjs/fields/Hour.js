@@ -131,6 +131,8 @@ function Hour() {
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   _react["default"].useEffect(function () {
+    console.log(hourAtEvery);
+
     if (hourAtEvery.value === 'every') {
       if (hour.length > 1) {
         setHour([hourOptions[1]]);
