@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.monthCronState = exports.minuteCronState = exports.hourCronState = exports.dayOfWeekCronState = exports.dayOfMonthCronState = exports.cronExpState = void 0;
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _constants = require("./constants");
 

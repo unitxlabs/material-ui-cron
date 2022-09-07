@@ -13,7 +13,7 @@ var _TextField = _interopRequireDefault(require("@material-ui/core/TextField"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _useDebounce = _interopRequireDefault(require("../hooks/useDebounce"));
 

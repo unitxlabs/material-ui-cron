@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.weekState = exports.periodState = exports.monthState = exports.minuteState = exports.minuteRangeStartSchedulerState = exports.minuteRangeEndSchedulerState = exports.minuteAtEveryState = exports.localeState = exports.isAdminState = exports.hourState = exports.hourRangeStartSchedulerState = exports.hourRangeEndSchedulerState = exports.hourAtEveryState = exports.dayOfMonthState = exports.dayOfMonthRangeStartSchedulerState = exports.dayOfMonthRangeEndSchedulerState = exports.dayOfMonthAtEveryState = exports.cronValidationErrorMessageState = exports.cronExpInputState = void 0;
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _constants = require("./constants");
 

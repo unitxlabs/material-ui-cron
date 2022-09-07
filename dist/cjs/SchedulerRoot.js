@@ -7,7 +7,7 @@ exports["default"] = SchedulerRoot;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _Scheduler = _interopRequireDefault(require("./Scheduler"));
 

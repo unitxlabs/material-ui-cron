@@ -11,7 +11,7 @@ var _styles = require("@material-ui/styles");
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _CronExp = _interopRequireDefault(require("./components/CronExp"));
 

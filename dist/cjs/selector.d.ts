@@ -1,6 +1,6 @@
-export declare const minuteCronState: import("recoil").RecoilValueReadOnly<string>;
-export declare const hourCronState: import("recoil").RecoilValueReadOnly<string>;
-export declare const dayOfMonthCronState: import("recoil").RecoilValueReadOnly<string>;
-export declare const monthCronState: import("recoil").RecoilValueReadOnly<string>;
-export declare const dayOfWeekCronState: import("recoil").RecoilValueReadOnly<string>;
-export declare const cronExpState: import("recoil").RecoilState<string>;
+export declare const minuteCronState: import("@timiscoding/recoil").RecoilValueReadOnly<string>;
+export declare const hourCronState: import("@timiscoding/recoil").RecoilValueReadOnly<string>;
+export declare const dayOfMonthCronState: import("@timiscoding/recoil").RecoilValueReadOnly<string>;
+export declare const monthCronState: import("@timiscoding/recoil").RecoilValueReadOnly<string>;
+export declare const dayOfWeekCronState: import("@timiscoding/recoil").RecoilValueReadOnly<string>;
+export declare const cronExpState: import("@timiscoding/recoil").RecoilState<string>;

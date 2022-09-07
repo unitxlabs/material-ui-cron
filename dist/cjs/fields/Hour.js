@@ -15,7 +15,7 @@ var _clsx5 = _interopRequireDefault(require("clsx"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _CustomSelect = _interopRequireDefault(require("../components/CustomSelect"));
 

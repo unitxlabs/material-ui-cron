@@ -15,7 +15,7 @@ var _i18n = _interopRequireDefault(require("cronstrue/i18n"));
 
 var _react = _interopRequireDefault(require("react"));
 
-var _recoil = require("recoil");
+var _recoil = require("@timiscoding/recoil");
 
 var _selector = require("../selector");
 
