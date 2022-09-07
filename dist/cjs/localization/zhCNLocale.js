@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var enLocale = {
+var zhCNLocale = {
   everyText: '每',
   periodLabel: '时间间隔',
   atEveryText: '在/每隔',
@@ -28,5 +28,5 @@ var enLocale = {
   lastDayOfMonthLabel: '这个月的最后一天',
   cronDescriptionText: 'zh_CN'
 };
-var _default = enLocale;
+var _default = zhCNLocale;
 exports["default"] = _default;

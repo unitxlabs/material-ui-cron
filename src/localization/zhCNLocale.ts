@@ -1,6 +1,6 @@
 import { Locale } from '../types'
 
-const enLocale: Locale = {
+const zhCNLocale: Locale = {
   everyText: '每',
   periodLabel: '时间间隔',
   atEveryText: '在/每隔',
@@ -46,4 +46,4 @@ const enLocale: Locale = {
   cronDescriptionText: 'zh_CN',
 }
 
-export default enLocale
+export default zhCNLocale

@@ -12,7 +12,7 @@ import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CustomSelect from '../components/CustomSelect';
 import { atEveryOptions, atOptionsNonAdmin, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
-import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState } from '../store';
+import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState, hourAtEveryState } from '../store';
 import { getTimesOfTheDay } from '../utils';
 const POSSIBLE_TIME_RANGES = getTimesOfTheDay();
 const useStyles = makeStyles({
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 export default function Hour() {
   const classes = useStyles();
   const resolvedLocale = useRecoilValue(localeState);
-  const [hourAtEvery, setHourAtEvery] = React.useState(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+  const [hourAtEvery, setHourAtEvery] = useRecoilState(hourAtEveryState);
   const [startHour, setStartHour] = useRecoilState(hourRangeStartSchedulerState);
   const [endHour, setEndHour] = useRecoilState(hourRangeEndSchedulerState);
   const [hour, setHour] = useRecoilState(hourState);

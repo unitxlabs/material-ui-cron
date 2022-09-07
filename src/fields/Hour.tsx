@@ -18,6 +18,7 @@ import {
   hourState,
   isAdminState,
   localeState,
+  hourAtEveryState,
 } from '../store'
 import { getTimesOfTheDay } from '../utils'
 
@@ -45,7 +46,7 @@ const useStyles = makeStyles({
 export default function Hour() {
   const classes = useStyles()
   const resolvedLocale = useRecoilValue(localeState)
-  const [hourAtEvery, setHourAtEvery] = React.useState(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0])
+  const [hourAtEvery, setHourAtEvery] = useRecoilState(hourAtEveryState)
   const [startHour, setStartHour] = useRecoilState(hourRangeStartSchedulerState)
   const [endHour, setEndHour] = useRecoilState(hourRangeEndSchedulerState)
   const [hour, setHour] = useRecoilState(hourState)
