@@ -60,6 +60,9 @@ export default function Scheduler(props) {
     }
   }, [isAdmin]);
   React.useEffect(() => {
+    setCronExp(cron);
+  }, [cron]);
+  React.useEffect(() => {
     setCronExpInput(cron);
     return () => {
       setCronExp('0 0 * * 1-5');
