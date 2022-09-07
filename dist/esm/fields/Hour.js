@@ -35,6 +35,7 @@ const useStyles = makeStyles({
 });
 export default function Hour() {
   const classes = useStyles();
+  const resolvedLocale = useRecoilValue(localeState);
   const [hourAtEvery, setHourAtEvery] = useRecoilState(hourAtEveryState);
   const [startHour, setStartHour] = useRecoilState(hourRangeStartSchedulerState);
   const [endHour, setEndHour] = useRecoilState(hourRangeEndSchedulerState);
@@ -79,7 +80,6 @@ export default function Hour() {
       setHour(prevHour => [prevHour[0]]);
     }
   }, [isAdmin]);
-  const resolvedLocale = useRecoilValue(localeState);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,

@@ -67,6 +67,7 @@ var useStyles = (0, _styles.makeStyles)({
 
 function Hour() {
   var classes = useStyles();
+  var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
 
   var _useRecoilState = (0, _recoil.useRecoilState)(_store.hourAtEveryState),
       _useRecoilState2 = _slicedToArray(_useRecoilState, 2),
@@ -155,7 +156,6 @@ function Hour() {
     }
   }, [isAdmin]);
 
-  var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
     pt: 1,
