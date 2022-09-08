@@ -59,6 +59,18 @@ function Period() {
   var classes = useStyles();
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
   var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
+
+  var resetWeekforMonthPeriod = function resetWeekforMonthPeriod(period) {
+    console.log(period);
+    console.log(_store.weekState);
+
+    if (period.value === 'month') {
+      (0, _recoil.useResetRecoilState)(_store.weekState)();
+    }
+
+    setPeriod(period);
+  };
+
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
     pt: 1,
@@ -82,7 +94,7 @@ function Period() {
     options: isAdmin ? (0, _constants.getPeriodOptions)(resolvedLocale.periodOptions) : (0, _constants.getPeriodOptionsWithHourDisabled)(resolvedLocale.periodOptions),
     label: resolvedLocale.periodLabel,
     value: period,
-    setValue: setPeriod,
+    setValue: resetWeekforMonthPeriod,
     multiple: false,
     classes: {
       root: (0, _clsx2["default"])(_defineProperty({}, classes.period, true))

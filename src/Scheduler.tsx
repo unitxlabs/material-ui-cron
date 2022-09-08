@@ -111,7 +111,7 @@ export default function Scheduler(props: SchedulerProps) {
         <Period />
         {periodIndex > 3 && <Month />}
         {periodIndex > 2 && <DayOfMonth />}
-        {periodIndex > 1 && <Week />}
+        {periodIndex == 2 && <Week />}
         {periodIndex > 0 && <Hour />}
         <Minute />
         <CronExp />

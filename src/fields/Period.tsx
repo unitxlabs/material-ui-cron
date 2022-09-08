@@ -3,13 +3,13 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/styles'
 import clsx from 'clsx'
 import React from 'react'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue, useResetRecoilState} from 'recoil'
 import CustomSelect from '../components/CustomSelect'
 import {
   getPeriodOptions,
   getPeriodOptionsWithHourDisabled,
 } from '../constants'
-import { isAdminState, localeState, periodState } from '../store'
+import { isAdminState, localeState, periodState, weekState } from '../store'
 
 const useStyles = makeStyles({
   period: {
@@ -30,6 +30,15 @@ export default function Period() {
 
   const resolvedLocale = useRecoilValue(localeState)
 
+  const resetWeekforMonthPeriod = (period) => {
+    console.log(period);
+    console.log(weekState);
+    if (period.value === 'month') {
+      useResetRecoilState(weekState)();
+    }
+    setPeriod(period);
+  }
+
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <Typography classes={{ root: classes.every }} mr={0.625} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>
@@ -45,7 +54,7 @@ export default function Period() {
         }
         label={resolvedLocale.periodLabel}
         value={period}
-        setValue={setPeriod}
+        setValue={resetWeekforMonthPeriod}
         multiple={false}
         classes={{
           root: clsx({
