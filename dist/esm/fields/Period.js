@@ -3,10 +3,10 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 import React from 'react';
-import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import CustomSelect from '../components/CustomSelect';
 import { getPeriodOptions, getPeriodOptionsWithHourDisabled } from '../constants';
-import { isAdminState, localeState, periodState, weekState } from '../store';
+import { isAdminState, localeState, periodState } from '../store';
 const useStyles = makeStyles({
   period: {
     minWidth: 200,
@@ -22,18 +22,6 @@ export default function Period() {
   const classes = useStyles();
   const isAdmin = useRecoilValue(isAdminState);
   const resolvedLocale = useRecoilValue(localeState);
-
-  const resetWeekforMonthPeriod = period => {
-    console.log(period);
-    console.log(weekState);
-
-    if (period.value === 'month') {
-      useResetRecoilState(weekState)();
-    }
-
-    setPeriod(period);
-  };
-
   return React.createElement(Box, {
     display: "flex",
     pt: 1,
@@ -57,7 +45,7 @@ export default function Period() {
     options: isAdmin ? getPeriodOptions(resolvedLocale.periodOptions) : getPeriodOptionsWithHourDisabled(resolvedLocale.periodOptions),
     label: resolvedLocale.periodLabel,
     value: period,
-    setValue: resetWeekforMonthPeriod,
+    setValue: setPeriod,
     multiple: false,
     classes: {
       root: clsx({

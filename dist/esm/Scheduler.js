@@ -48,6 +48,7 @@ export default function Scheduler(props) {
   }, [cronError]);
   React.useEffect(() => {
     setPeriodIndex(getPeriodIndex(period));
+    resetDayOfWeek();
   }, [period]);
   React.useEffect(() => {
     setCron(cronExpInput);
@@ -91,5 +92,5 @@ export default function Scheduler(props) {
       borderStyle: 'none',
       paddingLeft: '0px'
     }
-  }, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex == 2 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronExp, null), React.createElement(CronReader, null)));
+  }, React.createElement(Period, null), periodIndex > 3 && React.createElement(Month, null), periodIndex > 2 && React.createElement(DayOfMonth, null), periodIndex == 1 && React.createElement(Week, null), periodIndex > 0 && React.createElement(Hour, null), React.createElement(Minute, null), React.createElement(CronExp, null), React.createElement(CronReader, null)));
 }
