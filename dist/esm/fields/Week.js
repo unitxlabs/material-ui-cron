@@ -32,6 +32,7 @@ export default function Week() {
     classes: {
       root: classes.on
     },
+    mr: 0.625,
     style: {
       alignSelf: 'center',
       visibility: 'visible',

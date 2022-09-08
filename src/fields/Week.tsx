@@ -29,7 +29,7 @@ export default function Week() {
 
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
-      <Typography classes={{ root: classes.on }} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>
+      <Typography classes={{ root: classes.on }} mr={0.625} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>
         {resolvedLocale.onText}
       </Typography>
       <CustomSelect
