@@ -84,8 +84,10 @@ function CustomSelect(props) {
         }), disableSingleItemRemove));
       });
     },
-    getOptionDisabled: function getOptionDisabled(option) {
-      return option.disabled ? true : false;
+    filterOptions: function filterOptions(options) {
+      return options.filter(function (opt) {
+        return opt.disabled;
+      });
     },
     renderInput: function renderInput(params) {
       return _react["default"].createElement(_TextField["default"], _extends({}, params, {

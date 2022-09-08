@@ -29,6 +29,11 @@ const useStyles = makeStyles({
     marginRight: '6px',
   },
   hour: {
+    "& .MuiFormControl-root": {
+      "& .MuiInputLabel-root": {
+        lineHeight: 'normal'
+      },
+    },
     minWidth: '130px',
     maxWidth: '450px',
     marginRight: '6px',
@@ -120,7 +125,6 @@ export default function Hour() {
         label={resolvedLocale.hourLabel}
         value={hour}
         setValue={setHour}
-        single={hourAtEvery.value === 'every' || !isAdmin}
         sort
         disableEmpty
         limitTags={3}

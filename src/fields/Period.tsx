@@ -13,6 +13,11 @@ import { isAdminState, localeState, periodState } from '../store'
 
 const useStyles = makeStyles({
   period: {
+    "& .MuiFormControl-root": {
+      "& .MuiInputLabel-root": {
+        lineHeight: 'normal'
+      },
+    },
     minWidth: 200,
     marginRight: '6px',
     maxWidth: 200,

@@ -9,6 +9,11 @@ import { weekOptions as defaultWeekOptions } from '../constants';
 import { localeState, weekState } from '../store';
 const useStyles = makeStyles({
   week: {
+    "& .MuiFormControl-root": {
+      "& .MuiInputLabel-root": {
+        lineHeight: 'normal'
+      }
+    },
     minWidth: '300px',
     maxWidth: '500px',
     marginRight: '6px'

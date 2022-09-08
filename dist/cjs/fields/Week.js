@@ -41,6 +41,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var useStyles = (0, _styles.makeStyles)({
   week: {
+    "& .MuiFormControl-root": {
+      "& .MuiInputLabel-root": {
+        lineHeight: 'normal'
+      }
+    },
     minWidth: '300px',
     maxWidth: '500px',
     marginRight: '6px'

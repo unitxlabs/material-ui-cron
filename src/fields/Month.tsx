@@ -10,6 +10,11 @@ import { localeState, monthState } from '../store'
 
 const useStyles = makeStyles({
   month: {
+    "& .MuiFormControl-root": {
+      "& .MuiInputLabel-root": {
+        lineHeight: 'normal'
+      },
+    },
     minWidth: '300px',
     maxWidth: '500px',
     marginRight: '6px',
