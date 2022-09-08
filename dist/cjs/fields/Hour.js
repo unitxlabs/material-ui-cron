@@ -48,7 +48,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var POSSIBLE_TIME_RANGES = (0, _utils.getTimesOfTheDay)();
 var useStyles = (0, _styles.makeStyles)({
   every: {
-    minWidth: '100px',
     marginRight: '6px'
   },
   hour: {

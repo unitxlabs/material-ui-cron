@@ -46,7 +46,7 @@ var useStyles = (0, _styles.makeStyles)({
     marginRight: '6px'
   },
   on: {
-    margin: '8.5px 6px 0 0'
+    margin: '0 6px 0 0'
   }
 });
 
@@ -74,6 +74,12 @@ function Week() {
   }, _react["default"].createElement(_Typography["default"], {
     classes: {
       root: classes.on
+    },
+    style: {
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
   }, resolvedLocale.onText), _react["default"].createElement(_CustomSelect["default"], {
     options: weekOptions,

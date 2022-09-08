@@ -26,7 +26,6 @@ const POSSIBLE_TIME_RANGES = getTimesOfTheDay()
 
 const useStyles = makeStyles({
   every: {
-    minWidth: '100px',
     marginRight: '6px',
   },
   hour: {

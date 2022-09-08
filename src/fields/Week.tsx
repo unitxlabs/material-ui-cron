@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     marginRight: '6px',
   },
   on: {
-    margin: '8.5px 6px 0 0',
+    margin: '0 6px 0 0',
   },
 })
 
@@ -29,7 +29,7 @@ export default function Week() {
 
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
-      <Typography classes={{ root: classes.on }}>
+      <Typography classes={{ root: classes.on }} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>
         {resolvedLocale.onText}
       </Typography>
       <CustomSelect

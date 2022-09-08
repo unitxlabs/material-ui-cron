@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     marginRight: '6px'
   },
   on: {
-    margin: '8.5px 6px 0 0'
+    margin: '0 6px 0 0'
   }
 });
 export default function Week() {
@@ -31,6 +31,12 @@ export default function Week() {
   }, React.createElement(Typography, {
     classes: {
       root: classes.on
+    },
+    style: {
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
   }, resolvedLocale.onText), React.createElement(CustomSelect, {
     options: weekOptions,
