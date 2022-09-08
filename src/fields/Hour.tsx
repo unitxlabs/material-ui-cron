@@ -156,46 +156,6 @@ export default function Hour() {
           }),
         }}
       />
-      {hourAtEvery.value === 'every' && (
-        <>
-          <Typography classes={{ root: classes.between }}>
-            {resolvedLocale.betweenText}
-          </Typography>
-          <CustomSelect
-            single
-            options={possibleStartTimes}
-            label={''}
-            value={startHour}
-            setValue={setStartHour}
-            multiple={false}
-            disableClearable
-            classes={{
-              root: clsx({
-                [classes.betweenSelect]: true,
-              }),
-            }}
-            disabled={!isAdmin}
-          />
-          <Typography classes={{ root: classes.between }}>
-            {resolvedLocale.andText}
-          </Typography>
-          <CustomSelect
-            single
-            options={possibleEndTimes}
-            label={''}
-            value={endHour}
-            setValue={setEndHour}
-            multiple={false}
-            disableClearable
-            classes={{
-              root: clsx({
-                [classes.betweenSelect]: true,
-              }),
-            }}
-            disabled={!isAdmin}
-          />
-        </>
-      )}
     </Box>
   )
 }

@@ -7,11 +7,9 @@ exports["default"] = DayOfMonth;
 
 var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
 
-var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
-
 var _styles = require("@material-ui/styles");
 
-var _clsx5 = _interopRequireDefault(require("clsx"));
+var _clsx3 = _interopRequireDefault(require("clsx"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -180,7 +178,7 @@ function DayOfMonth() {
     multiple: false,
     disableClearable: true,
     classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.every, true))
+      root: (0, _clsx3["default"])(_defineProperty({}, classes.every, true))
     }
   }), _react["default"].createElement(_CustomSelect["default"], {
     options: dayOfMonthOptions,
@@ -193,37 +191,7 @@ function DayOfMonth() {
     limitTags: 3,
     disableClearable: dayOfMonthAtEvery.value === 'every' || dayOfMonth.length < 2,
     classes: {
-      root: (0, _clsx5["default"])((_clsx2 = {}, _defineProperty(_clsx2, classes.dayOfMonth, dayOfMonthAtEvery.value === 'on'), _defineProperty(_clsx2, classes.days, dayOfMonthAtEvery.value === 'every'), _clsx2))
+      root: (0, _clsx3["default"])((_clsx2 = {}, _defineProperty(_clsx2, classes.dayOfMonth, dayOfMonthAtEvery.value === 'on'), _defineProperty(_clsx2, classes.days, dayOfMonthAtEvery.value === 'every'), _clsx2))
     }
-  }), dayOfMonthAtEvery.value === 'every' && _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Typography["default"], {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.betweenText), _react["default"].createElement(_CustomSelect["default"], {
-    single: true,
-    options: possibleStartDays,
-    label: '',
-    value: startMonth,
-    setValue: setStartMonth,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.betweenSelect, true))
-    }
-  }), _react["default"].createElement(_Typography["default"], {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.andText), _react["default"].createElement(_CustomSelect["default"], {
-    single: true,
-    options: possibleEndDays,
-    label: '',
-    value: endMonth,
-    setValue: setEndMonth,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.betweenSelect, true))
-    }
-  })));
+  }));
 }

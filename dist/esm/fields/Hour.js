@@ -6,7 +6,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
-import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -116,41 +115,5 @@ export default function Hour() {
         [classes.hour]: true
       })
     }
-  }), hourAtEvery.value === 'every' && React.createElement(React.Fragment, null, React.createElement(Typography, {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.betweenText), React.createElement(CustomSelect, {
-    single: true,
-    options: possibleStartTimes,
-    label: '',
-    value: startHour,
-    setValue: setStartHour,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: clsx({
-        [classes.betweenSelect]: true
-      })
-    },
-    disabled: !isAdmin
-  }), React.createElement(Typography, {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.andText), React.createElement(CustomSelect, {
-    single: true,
-    options: possibleEndTimes,
-    label: '',
-    value: endHour,
-    setValue: setEndHour,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: clsx({
-        [classes.betweenSelect]: true
-      })
-    },
-    disabled: !isAdmin
-  })));
+  }));
 }

@@ -28,9 +28,6 @@ export const generateOrdinalOptions = (start, end) => {
   });
 };
 export const getPeriodOptions = periodOptionLabels => [{
-  label: periodOptionLabels[0],
-  value: 'hour'
-}, {
   label: periodOptionLabels[1],
   value: 'day'
 }, {
@@ -39,9 +36,6 @@ export const getPeriodOptions = periodOptionLabels => [{
 }, {
   label: periodOptionLabels[3],
   value: 'month'
-}, {
-  label: periodOptionLabels[4],
-  value: 'year'
 }];
 export const getPeriodOptionsWithHourDisabled = periodOptionLabels => getPeriodOptions(periodOptionLabels).map(periodOption => periodOption.value === 'hour' ? _objectSpread(_objectSpread({}, periodOption), {}, {
   disabled: true

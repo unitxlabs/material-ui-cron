@@ -9,9 +9,7 @@ var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
 
 var _styles = require("@material-ui/styles");
 
-var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
-
-var _clsx5 = _interopRequireDefault(require("clsx"));
+var _clsx3 = _interopRequireDefault(require("clsx"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -173,7 +171,7 @@ function Hour() {
     multiple: false,
     disableClearable: true,
     classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.every, true))
+      root: (0, _clsx3["default"])(_defineProperty({}, classes.every, true))
     }
   }), _react["default"].createElement(_CustomSelect["default"], {
     options: hourOptions,
@@ -187,39 +185,7 @@ function Hour() {
     disableClearable: hourAtEvery.value === 'every' || hour.length < 2,
     disabled: !isAdmin && hourAtEvery.value === 'every',
     classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.hour, true))
+      root: (0, _clsx3["default"])(_defineProperty({}, classes.hour, true))
     }
-  }), hourAtEvery.value === 'every' && _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_Typography["default"], {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.betweenText), _react["default"].createElement(_CustomSelect["default"], {
-    single: true,
-    options: possibleStartTimes,
-    label: '',
-    value: startHour,
-    setValue: setStartHour,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.betweenSelect, true))
-    },
-    disabled: !isAdmin
-  }), _react["default"].createElement(_Typography["default"], {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.andText), _react["default"].createElement(_CustomSelect["default"], {
-    single: true,
-    options: possibleEndTimes,
-    label: '',
-    value: endHour,
-    setValue: setEndHour,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: (0, _clsx5["default"])(_defineProperty({}, classes.betweenSelect, true))
-    },
-    disabled: !isAdmin
-  })));
+  }));
 }

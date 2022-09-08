@@ -5,7 +5,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 import React from 'react';
@@ -125,39 +124,5 @@ export default function DayOfMonth() {
         [classes.days]: dayOfMonthAtEvery.value === 'every'
       })
     }
-  }), dayOfMonthAtEvery.value === 'every' && React.createElement(React.Fragment, null, React.createElement(Typography, {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.betweenText), React.createElement(CustomSelect, {
-    single: true,
-    options: possibleStartDays,
-    label: '',
-    value: startMonth,
-    setValue: setStartMonth,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: clsx({
-        [classes.betweenSelect]: true
-      })
-    }
-  }), React.createElement(Typography, {
-    classes: {
-      root: classes.between
-    }
-  }, resolvedLocale.andText), React.createElement(CustomSelect, {
-    single: true,
-    options: possibleEndDays,
-    label: '',
-    value: endMonth,
-    setValue: setEndMonth,
-    multiple: false,
-    disableClearable: true,
-    classes: {
-      root: clsx({
-        [classes.betweenSelect]: true
-      })
-    }
-  })));
+  }));
 }

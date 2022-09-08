@@ -183,44 +183,6 @@ export default function DayOfMonth() {
           }),
         }}
       />
-      {dayOfMonthAtEvery.value === 'every' && (
-        <>
-          <Typography classes={{ root: classes.between }}>
-            {resolvedLocale.betweenText}
-          </Typography>
-          <CustomSelect
-            single
-            options={possibleStartDays}
-            label={''}
-            value={startMonth}
-            setValue={setStartMonth}
-            multiple={false}
-            disableClearable
-            classes={{
-              root: clsx({
-                [classes.betweenSelect]: true,
-              }),
-            }}
-          />
-          <Typography classes={{ root: classes.between }}>
-            {resolvedLocale.andText}
-          </Typography>
-          <CustomSelect
-            single
-            options={possibleEndDays}
-            label={''}
-            value={endMonth}
-            setValue={setEndMonth}
-            multiple={false}
-            disableClearable
-            classes={{
-              root: clsx({
-                [classes.betweenSelect]: true,
-              }),
-            }}
-          />
-        </>
-      )}
     </Box>
   )
 }
