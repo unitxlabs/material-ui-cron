@@ -64,7 +64,7 @@ export default function CustomSelect(props) {
         index
       }), disableSingleItemRemove));
     }),
-    filterOptions: options => options.filter(opt => opt.disabled),
+    filterOptions: options => options.filter(opt => !opt.disabled),
     renderInput: params => {
       return React.createElement(TextField, _extends({}, params, {
         variant: "outlined",

@@ -78,7 +78,7 @@ export default function CustomSelect(props: CustomSelectProps) {
             )
           })
         }
-        filterOptions={options => options.filter(opt => (opt as SelectOptions).disabled)}
+        filterOptions={options => options.filter(opt => !(opt as SelectOptions).disabled)}
         renderInput={(params) => {
           return <TextField {...params} variant='outlined' label={label} />
         }}

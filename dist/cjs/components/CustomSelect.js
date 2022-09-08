@@ -86,7 +86,7 @@ function CustomSelect(props) {
     },
     filterOptions: function filterOptions(options) {
       return options.filter(function (opt) {
-        return opt.disabled;
+        return !opt.disabled;
       });
     },
     renderInput: function renderInput(params) {
