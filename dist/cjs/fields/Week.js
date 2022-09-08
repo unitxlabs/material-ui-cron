@@ -65,6 +65,12 @@ function Week() {
       weekOptions = _React$useState2[0],
       setWeekOptions = _React$useState2[1];
 
+  _react["default"].useEffect(function () {
+    setWeek(week.map(function (cur) {
+      return (0, _constants.weekOptions)(resolvedLocale.weekDaysOptions)[parseInt(cur.value)];
+    }));
+  }, [resolvedLocale]);
+
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
     pt: 1,
@@ -80,9 +86,7 @@ function Week() {
     label: resolvedLocale.dayOfWeekLabel,
     value: week,
     setValue: setWeek,
-    disableClearable: true,
     sort: true,
-    disableEmpty: true,
     classes: {
       root: (0, _clsx2["default"])(_defineProperty({}, classes.week, true))
     },

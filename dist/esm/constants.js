@@ -96,28 +96,13 @@ export const defaultMinuteOptions = () => {
 };
 export const defaultMinuteOptionsWithOrdinal = () => DEFAULT_MINUTE_OPTS;
 export const DEFAULT_MINUTE_OPTS = defaultMinuteOptions();
-export const atEveryOptions = (atLabel, everyLabel) => [{
+export const atEveryOptions = atLabel => [{
   value: 'at',
   label: atLabel
-}, {
-  value: 'every',
-  label: everyLabel
-}];
-export const everyOptionsNonAdmin = (atLabel, everyLabel) => [{
-  value: 'at',
-  label: atLabel,
-  disabled: true
-}, {
-  value: 'every',
-  label: everyLabel
 }];
 export const atOptionsNonAdmin = (atLabel, everyLabel) => [{
   value: 'at',
   label: atLabel
-}, {
-  value: 'every',
-  label: everyLabel,
-  disabled: true
 }];
 export const onEveryOptions = (onLabel, everyLabel) => [{
   value: 'on',

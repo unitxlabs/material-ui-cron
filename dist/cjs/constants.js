@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.weekOptions = exports.onEveryOptions = exports.getPeriodOptionsWithHourDisabled = exports.getPeriodOptions = exports.getMonthOptions = exports.getLastDayOfMonthOption = exports.getDayOfMonthsOptionsWithL = exports.generateOrdinalOptions = exports.everyOptionsNonAdmin = exports.defaultMinuteOptionsWithOrdinal = exports.defaultMinuteOptions = exports.defaultHourOptionsHr = exports.defaultHourOptions = exports.defaultDayOfMonthOptionsWithOrdinal = exports.defaultDayOfMonthOptions = exports.atOptionsNonAdmin = exports.atEveryOptions = exports.DEFAULT_MINUTE_OPTS = exports.DEFAULT_HOUR_OPTS_EVERY = exports.DEFAULT_HOUR_OPTS_AT = exports.DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD = exports.DEFAULT_DAY_OF_MONTH_OPTS = void 0;
+exports.weekOptions = exports.onEveryOptions = exports.getPeriodOptionsWithHourDisabled = exports.getPeriodOptions = exports.getMonthOptions = exports.getLastDayOfMonthOption = exports.getDayOfMonthsOptionsWithL = exports.generateOrdinalOptions = exports.defaultMinuteOptionsWithOrdinal = exports.defaultMinuteOptions = exports.defaultHourOptionsHr = exports.defaultHourOptions = exports.defaultDayOfMonthOptionsWithOrdinal = exports.defaultDayOfMonthOptions = exports.atOptionsNonAdmin = exports.atEveryOptions = exports.DEFAULT_MINUTE_OPTS = exports.DEFAULT_HOUR_OPTS_EVERY = exports.DEFAULT_HOUR_OPTS_AT = exports.DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD = exports.DEFAULT_DAY_OF_MONTH_OPTS = void 0;
 
 var _utils = require("./utils");
 
@@ -168,39 +168,19 @@ exports.defaultMinuteOptionsWithOrdinal = defaultMinuteOptionsWithOrdinal;
 var DEFAULT_MINUTE_OPTS = defaultMinuteOptions();
 exports.DEFAULT_MINUTE_OPTS = DEFAULT_MINUTE_OPTS;
 
-var atEveryOptions = function atEveryOptions(atLabel, everyLabel) {
+var atEveryOptions = function atEveryOptions(atLabel) {
   return [{
     value: 'at',
     label: atLabel
-  }, {
-    value: 'every',
-    label: everyLabel
   }];
 };
 
 exports.atEveryOptions = atEveryOptions;
 
-var everyOptionsNonAdmin = function everyOptionsNonAdmin(atLabel, everyLabel) {
-  return [{
-    value: 'at',
-    label: atLabel,
-    disabled: true
-  }, {
-    value: 'every',
-    label: everyLabel
-  }];
-};
-
-exports.everyOptionsNonAdmin = everyOptionsNonAdmin;
-
 var atOptionsNonAdmin = function atOptionsNonAdmin(atLabel, everyLabel) {
   return [{
     value: 'at',
     label: atLabel
-  }, {
-    value: 'every',
-    label: everyLabel,
-    disabled: true
   }];
 };
 

@@ -50,13 +50,11 @@ export default function CustomSelect(props) {
     getOptionLabel: option => option.label,
     size: "small",
     forcePopupIcon: true,
-    disableClearable: disableClearable,
+    disableClearable: false,
     autoComplete: true,
-    disableCloseOnSelect: !single,
+    disableCloseOnSelect: false,
     renderTags: (value, getTagProps) => value.map((option, index) => {
-      const disableSingleItemRemove = value.length === 1 && disableEmpty ? {
-        onDelete: undefined
-      } : {};
+      const disableSingleItemRemove = {};
       return React.createElement(Chip, _extends({
         label: option.label,
         size: "small"
@@ -64,7 +62,7 @@ export default function CustomSelect(props) {
         index
       }), disableSingleItemRemove));
     }),
-    getOptionDisabled: option => option.disabled ? true : false,
+    filterOptions: options => options.filter(opt => opt.disabled),
     renderInput: params => {
       return React.createElement(TextField, _extends({}, params, {
         variant: "outlined",

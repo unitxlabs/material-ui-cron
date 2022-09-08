@@ -80,9 +80,7 @@ function Month() {
     label: resolvedLocale.monthLabel,
     value: month,
     setValue: setMonth,
-    disableClearable: true,
     sort: true,
-    disableEmpty: true,
     classes: {
       root: (0, _clsx2["default"])(_defineProperty({}, classes.month, true))
     },

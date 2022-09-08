@@ -129,23 +129,11 @@ function Hour() {
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   _react["default"].useEffect(function () {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
+    setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel)[0]);
   }, [resolvedLocale]);
 
   _react["default"].useEffect(function () {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]]);
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]]);
-      }
-
-      setHourOptions(_constants.DEFAULT_HOUR_OPTS_EVERY);
-    } else {
-      setHourOptions(_constants.DEFAULT_HOUR_OPTS_AT);
-    }
+    setHourOptions(_constants.DEFAULT_HOUR_OPTS_AT);
   }, [hourAtEvery]);
 
   _react["default"].useEffect(function () {
@@ -164,7 +152,7 @@ function Hour() {
     mb: 1
   }, _react["default"].createElement(_CustomSelect["default"], {
     single: true,
-    options: isAdmin ? (0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : (0, _constants.atOptionsNonAdmin)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),
+    options: (0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel),
     label: resolvedLocale.atEveryText,
     value: hourAtEvery,
     setValue: setHourAtEvery,
@@ -178,12 +166,8 @@ function Hour() {
     label: resolvedLocale.hourLabel,
     value: hour,
     setValue: setHour,
-    single: hourAtEvery.value === 'every' || !isAdmin,
     sort: true,
-    disableEmpty: true,
     limitTags: 3,
-    disableClearable: hourAtEvery.value === 'every' || hour.length < 2,
-    disabled: !isAdmin && hourAtEvery.value === 'every',
     classes: {
       root: (0, _clsx3["default"])(_defineProperty({}, classes.hour, true))
     }

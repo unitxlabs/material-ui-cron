@@ -12,7 +12,6 @@ const useStyles = makeStyles(() => createStyles({
   }
 }));
 export default function CronReader() {
-  const classes = useStyles();
   const cronExp = useRecoilValue(cronExpState);
   const resolvedLocale = useRecoilValue(localeState);
   return React.createElement(Box, {

@@ -10,7 +10,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CustomSelect from '../components/CustomSelect';
-import { atEveryOptions, atOptionsNonAdmin, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
+import { atEveryOptions, defaultHourOptions, DEFAULT_HOUR_OPTS_AT } from '../constants';
 import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState, hourAtEveryState } from '../store';
 import { getTimesOfTheDay } from '../utils';
 const POSSIBLE_TIME_RANGES = getTimesOfTheDay();
@@ -58,22 +58,10 @@ export default function Hour() {
   }, [endHour]);
   const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
+    setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel)[0]);
   }, [resolvedLocale]);
   React.useEffect(() => {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]]);
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]]);
-      }
-
-      setHourOptions(DEFAULT_HOUR_OPTS_EVERY);
-    } else {
-      setHourOptions(DEFAULT_HOUR_OPTS_AT);
-    }
+    setHourOptions(DEFAULT_HOUR_OPTS_AT);
   }, [hourAtEvery]);
   React.useEffect(() => {
     if (!isAdmin && hour.length > 1) {
@@ -88,7 +76,7 @@ export default function Hour() {
     mb: 1
   }, React.createElement(CustomSelect, {
     single: true,
-    options: isAdmin ? atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : atOptionsNonAdmin(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),
+    options: atEveryOptions(resolvedLocale.atOptionLabel),
     label: resolvedLocale.atEveryText,
     value: hourAtEvery,
     setValue: setHourAtEvery,
@@ -104,12 +92,8 @@ export default function Hour() {
     label: resolvedLocale.hourLabel,
     value: hour,
     setValue: setHour,
-    single: hourAtEvery.value === 'every' || !isAdmin,
     sort: true,
-    disableEmpty: true,
     limitTags: 3,
-    disableClearable: hourAtEvery.value === 'every' || hour.length < 2,
-    disabled: !isAdmin && hourAtEvery.value === 'every',
     classes: {
       root: clsx({
         [classes.hour]: true

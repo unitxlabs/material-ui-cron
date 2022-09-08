@@ -61,13 +61,12 @@ export default function CustomSelect(props: CustomSelectProps) {
         getOptionLabel={(option) => (option as SelectOptions).label}
         size='small'
         forcePopupIcon
-        disableClearable={disableClearable}
+        disableClearable={false}
         autoComplete
-        disableCloseOnSelect={!single}
+        disableCloseOnSelect={false}
         renderTags={(value, getTagProps) =>
           value.map((option, index) => {
-            const disableSingleItemRemove =
-              value.length === 1 && disableEmpty ? { onDelete: undefined } : {}
+            const disableSingleItemRemove = {}
             return (
               <Chip
                 label={(option as SelectOptions).label}
@@ -78,9 +77,7 @@ export default function CustomSelect(props: CustomSelectProps) {
             )
           })
         }
-        getOptionDisabled={(option) =>
-          (option as SelectOptions).disabled ? true : false
-        }
+        filterOptions={options => options.filter(opt => (opt as SelectOptions).disabled)}
         renderInput={(params) => {
           return <TextField {...params} variant='outlined' label={label} />
         }}

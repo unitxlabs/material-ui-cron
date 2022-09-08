@@ -27,6 +27,10 @@ export default function Week() {
     defaultWeekOptions(resolvedLocale.weekDaysOptions)
   )
 
+  React.useEffect(() => {
+    setWeek(week.map(cur => defaultWeekOptions(resolvedLocale.weekDaysOptions)[parseInt(cur.value)]));
+  }, [resolvedLocale]);
+
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <Typography classes={{ root: classes.on }}>
@@ -37,9 +41,7 @@ export default function Week() {
         label={resolvedLocale.dayOfWeekLabel}
         value={week}
         setValue={setWeek}
-        disableClearable
         sort
-        disableEmpty
         classes={{
           root: clsx({
             [classes.week]: true,

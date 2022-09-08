@@ -37,9 +37,7 @@ export default function Month() {
     label: resolvedLocale.monthLabel,
     value: month,
     setValue: setMonth,
-    disableClearable: true,
     sort: true,
-    disableEmpty: true,
     classes: {
       root: clsx({
         [classes.month]: true

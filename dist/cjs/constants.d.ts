@@ -44,7 +44,6 @@ export declare const DEFAULT_HOUR_OPTS_EVERY: {
 export declare const defaultMinuteOptions: () => SelectOptions[];
 export declare const defaultMinuteOptionsWithOrdinal: () => SelectOptions[];
 export declare const DEFAULT_MINUTE_OPTS: SelectOptions[];
-export declare const atEveryOptions: (atLabel: string, everyLabel: string) => SelectOptions[];
-export declare const everyOptionsNonAdmin: (atLabel: string, everyLabel: string) => SelectOptions[];
+export declare const atEveryOptions: (atLabel: string) => SelectOptions[];
 export declare const atOptionsNonAdmin: (atLabel: string, everyLabel: string) => SelectOptions[];
 export declare const onEveryOptions: (onLabel: string, everyLabel: string) => SelectOptions[];

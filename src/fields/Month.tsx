@@ -37,9 +37,7 @@ export default function Month() {
         label={resolvedLocale.monthLabel}
         value={month}
         setValue={setMonth}
-        disableClearable
         sort
-        disableEmpty
         classes={{
           root: clsx({
             [classes.month]: true,

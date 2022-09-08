@@ -7,10 +7,8 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import CustomSelect from '../components/CustomSelect'
 import {
   atEveryOptions,
-  atOptionsNonAdmin,
   defaultHourOptions,
   DEFAULT_HOUR_OPTS_AT,
-  DEFAULT_HOUR_OPTS_EVERY,
 } from '../constants'
 import {
   hourRangeEndSchedulerState,
@@ -89,22 +87,11 @@ export default function Hour() {
   const isAdmin = useRecoilValue(isAdminState)
 
   React.useEffect(() => {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
-  }, [resolvedLocale])
+    setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel)[0]);
+  }, [resolvedLocale]);
 
   React.useEffect(() => {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]])
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]])
-      }
-      setHourOptions(DEFAULT_HOUR_OPTS_EVERY)
-    } else {
-      setHourOptions(DEFAULT_HOUR_OPTS_AT)
-    }
+    setHourOptions(DEFAULT_HOUR_OPTS_AT)
   }, [hourAtEvery])
 
   React.useEffect(() => {
@@ -118,15 +105,9 @@ export default function Hour() {
       <CustomSelect
         single
         options={
-          isAdmin
-            ? atEveryOptions(
-                resolvedLocale.atOptionLabel,
-                resolvedLocale.everyOptionLabel
-              )
-            : atOptionsNonAdmin(
-                resolvedLocale.atOptionLabel,
-                resolvedLocale.everyOptionLabel
-              )
+          atEveryOptions(
+            resolvedLocale.atOptionLabel,
+          )
         }
         label={resolvedLocale.atEveryText}
         value={hourAtEvery}
@@ -144,12 +125,8 @@ export default function Hour() {
         label={resolvedLocale.hourLabel}
         value={hour}
         setValue={setHour}
-        single={hourAtEvery.value === 'every' || !isAdmin}
         sort
-        disableEmpty
         limitTags={3}
-        disableClearable={hourAtEvery.value === 'every' || hour.length < 2}
-        disabled={!isAdmin && hourAtEvery.value === 'every'}
         classes={{
           root: clsx({
             [classes.hour]: true,

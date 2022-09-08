@@ -22,6 +22,9 @@ export default function Week() {
   const [week, setWeek] = useRecoilState(weekState);
   const resolvedLocale = useRecoilValue(localeState);
   const [weekOptions, setWeekOptions] = React.useState(defaultWeekOptions(resolvedLocale.weekDaysOptions));
+  React.useEffect(() => {
+    setWeek(week.map(cur => defaultWeekOptions(resolvedLocale.weekDaysOptions)[parseInt(cur.value)]));
+  }, [resolvedLocale]);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,
@@ -37,9 +40,7 @@ export default function Week() {
     label: resolvedLocale.dayOfWeekLabel,
     value: week,
     setValue: setWeek,
-    disableClearable: true,
     sort: true,
-    disableEmpty: true,
     classes: {
       root: clsx({
         [classes.week]: true

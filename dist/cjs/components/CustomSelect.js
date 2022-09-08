@@ -68,14 +68,12 @@ function CustomSelect(props) {
     },
     size: "small",
     forcePopupIcon: true,
-    disableClearable: disableClearable,
+    disableClearable: false,
     autoComplete: true,
-    disableCloseOnSelect: !single,
+    disableCloseOnSelect: false,
     renderTags: function renderTags(value, getTagProps) {
       return value.map(function (option, index) {
-        var disableSingleItemRemove = value.length === 1 && disableEmpty ? {
-          onDelete: undefined
-        } : {};
+        var disableSingleItemRemove = {};
         return _react["default"].createElement(_Chip["default"], _extends({
           label: option.label,
           size: "small"
@@ -84,8 +82,10 @@ function CustomSelect(props) {
         }), disableSingleItemRemove));
       });
     },
-    getOptionDisabled: function getOptionDisabled(option) {
-      return option.disabled ? true : false;
+    filterOptions: function filterOptions(options) {
+      return options.filter(function (opt) {
+        return opt.disabled;
+      });
     },
     renderInput: function renderInput(params) {
       return _react["default"].createElement(_TextField["default"], _extends({}, params, {

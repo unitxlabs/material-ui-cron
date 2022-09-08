@@ -32,7 +32,6 @@ var useStyles = (0, _styles.makeStyles)(function () {
 });
 
 function CronReader() {
-  var classes = useStyles();
   var cronExp = (0, _recoil.useRecoilValue)(_selector.cronExpState);
   var resolvedLocale = (0, _recoil.useRecoilValue)(_store.localeState);
   return _react["default"].createElement(_Box["default"], {

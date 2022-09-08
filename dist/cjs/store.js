@@ -101,7 +101,6 @@ var dayOfMonthAtEveryState = (0, _recoil.atom)({
 
       var resolvedLocale = _get4(localeState);
 
-      console.log(resolvedLocale);
       return (0, _constants.onEveryOptions)(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel)[0];
     }
   })

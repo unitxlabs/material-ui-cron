@@ -95,7 +95,6 @@ export const dayOfMonthAtEveryState = atom<SelectOptions>({
     key: 'dayOfMonthAtEveryStateDefaultSelector',
     get: ({ get }) => {
       const resolvedLocale = get(localeState)
-      console.log(resolvedLocale)
       return onEveryOptions(
         resolvedLocale.onOptionLabel,
         resolvedLocale.everyOptionLabel
