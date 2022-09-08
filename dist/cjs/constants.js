@@ -40,6 +40,9 @@ exports.generateOrdinalOptions = generateOrdinalOptions;
 
 var getPeriodOptions = function getPeriodOptions(periodOptionLabels) {
   return [{
+    label: periodOptionLabels[0],
+    value: 'hour'
+  }, {
     label: periodOptionLabels[1],
     value: 'day'
   }, {
@@ -48,6 +51,9 @@ var getPeriodOptions = function getPeriodOptions(periodOptionLabels) {
   }, {
     label: periodOptionLabels[3],
     value: 'month'
+  }, {
+    label: periodOptionLabels[4],
+    value: 'year'
   }];
 };
 

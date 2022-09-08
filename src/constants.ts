@@ -31,6 +31,10 @@ export const getPeriodOptions = (
   periodOptionLabels: string[]
 ): SelectOptions[] => [
   {
+    label: periodOptionLabels[0],
+    value: 'hour',
+  },
+  {
     label: periodOptionLabels[1],
     value: 'day',
   },
@@ -41,6 +45,10 @@ export const getPeriodOptions = (
   {
     label: periodOptionLabels[3],
     value: 'month',
+  },
+  {
+    label: periodOptionLabels[4],
+    value: 'year',
   }
 ]
 
