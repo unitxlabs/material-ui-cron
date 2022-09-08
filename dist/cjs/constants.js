@@ -182,10 +182,6 @@ exports.atEveryOptions = atEveryOptions;
 
 var everyOptionsNonAdmin = function everyOptionsNonAdmin(atLabel, everyLabel) {
   return [{
-    value: 'at',
-    label: atLabel,
-    disabled: true
-  }, {
     value: 'every',
     label: everyLabel
   }];
@@ -197,10 +193,6 @@ var atOptionsNonAdmin = function atOptionsNonAdmin(atLabel, everyLabel) {
   return [{
     value: 'at',
     label: atLabel
-  }, {
-    value: 'every',
-    label: everyLabel,
-    disabled: true
   }];
 };
 

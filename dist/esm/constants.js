@@ -104,20 +104,12 @@ export const atEveryOptions = (atLabel, everyLabel) => [{
   label: everyLabel
 }];
 export const everyOptionsNonAdmin = (atLabel, everyLabel) => [{
-  value: 'at',
-  label: atLabel,
-  disabled: true
-}, {
   value: 'every',
   label: everyLabel
 }];
 export const atOptionsNonAdmin = (atLabel, everyLabel) => [{
   value: 'at',
   label: atLabel
-}, {
-  value: 'every',
-  label: everyLabel,
-  disabled: true
 }];
 export const onEveryOptions = (onLabel, everyLabel) => [{
   value: 'on',

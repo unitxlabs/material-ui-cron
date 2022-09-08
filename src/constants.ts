@@ -160,11 +160,6 @@ export const everyOptionsNonAdmin = (
   everyLabel: string
 ): SelectOptions[] => [
   {
-    value: 'at',
-    label: atLabel,
-    disabled: true,
-  },
-  {
     value: 'every',
     label: everyLabel,
   },
@@ -177,12 +172,7 @@ export const atOptionsNonAdmin = (
   {
     value: 'at',
     label: atLabel,
-  },
-  {
-    value: 'every',
-    label: everyLabel,
-    disabled: true,
-  },
+  }
 ]
 export const onEveryOptions = (
   onLabel: string,

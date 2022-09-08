@@ -6,11 +6,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/styles';
+import Typography from '@material-ui/core/Typography';
 import clsx from 'clsx';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CustomSelect from '../components/CustomSelect';
-import { atEveryOptions, atOptionsNonAdmin, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
+import { atEveryOptions, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
 import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState, hourAtEveryState } from '../store';
 import { getTimesOfTheDay } from '../utils';
 const POSSIBLE_TIME_RANGES = getTimesOfTheDay();
@@ -58,9 +59,7 @@ export default function Hour() {
   }, [endHour]);
   const isAdmin = useRecoilValue(isAdminState);
   React.useEffect(() => {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
+    setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
   }, [resolvedLocale]);
   React.useEffect(() => {
     if (hourAtEvery.value === 'every') {
@@ -86,20 +85,18 @@ export default function Hour() {
     pb: 1,
     mt: 1,
     mb: 1
-  }, React.createElement(CustomSelect, {
-    single: true,
-    options: isAdmin ? atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : atOptionsNonAdmin(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),
-    label: resolvedLocale.atEveryText,
-    value: hourAtEvery,
-    setValue: setHourAtEvery,
-    multiple: false,
-    disableClearable: true,
+  }, React.createElement(Typography, {
     classes: {
-      root: clsx({
-        [classes.every]: true
-      })
+      root: classes.every
+    },
+    mr: 0.625,
+    style: {
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
-  }), React.createElement(CustomSelect, {
+  }, resolvedLocale.atEveryText), React.createElement(CustomSelect, {
     options: hourOptions,
     label: resolvedLocale.hourLabel,
     value: hour,

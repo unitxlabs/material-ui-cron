@@ -7,7 +7,7 @@ exports["default"] = void 0;
 var enLocale = {
   everyText: 'Every',
   periodLabel: 'Period',
-  atEveryText: 'At/Every',
+  atEveryText: 'at',
   minuteLabel: 'Minute(s)',
   atOptionLabel: 'at',
   everyOptionLabel: 'every',
@@ -20,7 +20,7 @@ var enLocale = {
   onEveryText: 'On/Every',
   multiDayOfMonthLabel: 'Day of the Month',
   dayOfMonthLabel: 'Days',
-  hourLabel: 'Hour(s)',
+  hourLabel: 'Hour',
   weekDaysOptions: ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'],
   periodOptions: ['hour', 'day', 'week', 'month', 'year'],
   shortMonthOptions: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

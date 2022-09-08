@@ -1,7 +1,7 @@
 const zhCNLocale = {
   everyText: '每',
   periodLabel: '时间间隔',
-  atEveryText: '在/每隔',
+  atEveryText: '在',
   minuteLabel: '分钟',
   atOptionLabel: '在',
   everyOptionLabel: '每隔',

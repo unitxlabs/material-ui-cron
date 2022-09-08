@@ -89,9 +89,7 @@ export default function Hour() {
   const isAdmin = useRecoilValue(isAdminState)
 
   React.useEffect(() => {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
       setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
   }, [resolvedLocale])
 
   React.useEffect(() => {
@@ -115,30 +113,9 @@ export default function Hour() {
 
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
-      <CustomSelect
-        single
-        options={
-          isAdmin
-            ? atEveryOptions(
-                resolvedLocale.atOptionLabel,
-                resolvedLocale.everyOptionLabel
-              )
-            : atOptionsNonAdmin(
-                resolvedLocale.atOptionLabel,
-                resolvedLocale.everyOptionLabel
-              )
-        }
-        label={resolvedLocale.atEveryText}
-        value={hourAtEvery}
-        setValue={setHourAtEvery}
-        multiple={false}
-        disableClearable
-        classes={{
-          root: clsx({
-            [classes.every]: true,
-          }),
-        }}
-      />
+      <Typography classes={{ root: classes.every }} mr={0.625} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>
+        {resolvedLocale.atEveryText}
+      </Typography>
       <CustomSelect
         options={hourOptions}
         label={resolvedLocale.hourLabel}

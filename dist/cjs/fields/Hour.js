@@ -9,7 +9,9 @@ var _Box = _interopRequireDefault(require("@material-ui/core/Box"));
 
 var _styles = require("@material-ui/styles");
 
-var _clsx3 = _interopRequireDefault(require("clsx"));
+var _Typography = _interopRequireDefault(require("@material-ui/core/Typography"));
+
+var _clsx2 = _interopRequireDefault(require("clsx"));
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -129,9 +131,7 @@ function Hour() {
   var isAdmin = (0, _recoil.useRecoilValue)(_store.isAdminState);
 
   _react["default"].useEffect(function () {
-    if (hourAtEvery.label !== resolvedLocale.atOptionLabel || hourAtEvery.label !== resolvedLocale.everyOptionLabel) {
-      setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-    }
+    setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
   }, [resolvedLocale]);
 
   _react["default"].useEffect(function () {
@@ -162,18 +162,18 @@ function Hour() {
     pb: 1,
     mt: 1,
     mb: 1
-  }, _react["default"].createElement(_CustomSelect["default"], {
-    single: true,
-    options: isAdmin ? (0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel) : (0, _constants.atOptionsNonAdmin)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel),
-    label: resolvedLocale.atEveryText,
-    value: hourAtEvery,
-    setValue: setHourAtEvery,
-    multiple: false,
-    disableClearable: true,
+  }, _react["default"].createElement(_Typography["default"], {
     classes: {
-      root: (0, _clsx3["default"])(_defineProperty({}, classes.every, true))
+      root: classes.every
+    },
+    mr: 0.625,
+    style: {
+      alignSelf: 'center',
+      visibility: 'visible',
+      maxWidth: 'none',
+      height: 'auto'
     }
-  }), _react["default"].createElement(_CustomSelect["default"], {
+  }, resolvedLocale.atEveryText), _react["default"].createElement(_CustomSelect["default"], {
     options: hourOptions,
     label: resolvedLocale.hourLabel,
     value: hour,
@@ -185,7 +185,7 @@ function Hour() {
     disableClearable: hourAtEvery.value === 'every' || hour.length < 2,
     disabled: !isAdmin && hourAtEvery.value === 'every',
     classes: {
-      root: (0, _clsx3["default"])(_defineProperty({}, classes.hour, true))
+      root: (0, _clsx2["default"])(_defineProperty({}, classes.hour, true))
     }
   }));
 }
