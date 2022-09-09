@@ -11,7 +11,7 @@ import clsx from 'clsx';
 import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CustomSelect from '../components/CustomSelect';
-import { atEveryOptions, defaultHourOptions, DEFAULT_HOUR_OPTS_AT, DEFAULT_HOUR_OPTS_EVERY } from '../constants';
+import { atEveryOptions, defaultHourOptions } from '../constants';
 import { hourRangeEndSchedulerState, hourRangeStartSchedulerState, hourState, isAdminState, localeState, hourAtEveryState } from '../store';
 import { getTimesOfTheDay } from '../utils';
 const POSSIBLE_TIME_RANGES = getTimesOfTheDay();
@@ -65,24 +65,6 @@ export default function Hour() {
   React.useEffect(() => {
     setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
   }, [resolvedLocale]);
-  React.useEffect(() => {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]]);
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]]);
-      }
-
-      setHourOptions(DEFAULT_HOUR_OPTS_EVERY);
-    } else {
-      setHourOptions(DEFAULT_HOUR_OPTS_AT);
-    }
-  }, [hourAtEvery]);
-  React.useEffect(() => {
-    if (!isAdmin && hour.length > 1) {
-      setHour(prevHour => [prevHour[0]]);
-    }
-  }, [isAdmin]);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,

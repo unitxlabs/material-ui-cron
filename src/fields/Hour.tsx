@@ -96,25 +96,6 @@ export default function Hour() {
       setHourAtEvery(atEveryOptions(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
   }, [resolvedLocale])
 
-  React.useEffect(() => {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]])
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]])
-      }
-      setHourOptions(DEFAULT_HOUR_OPTS_EVERY)
-    } else {
-      setHourOptions(DEFAULT_HOUR_OPTS_AT)
-    }
-  }, [hourAtEvery])
-
-  React.useEffect(() => {
-    if (!isAdmin && hour.length > 1) {
-      setHour((prevHour) => [prevHour[0]])
-    }
-  }, [isAdmin])
-
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <Typography classes={{ root: classes.every }} mr={0.625} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>

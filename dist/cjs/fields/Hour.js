@@ -138,28 +138,6 @@ function Hour() {
     setHourAtEvery((0, _constants.atEveryOptions)(resolvedLocale.atOptionLabel, resolvedLocale.everyOptionLabel)[0]);
   }, [resolvedLocale]);
 
-  _react["default"].useEffect(function () {
-    if (hourAtEvery.value === 'every') {
-      if (hour.length > 1) {
-        setHour([hourOptions[1]]);
-      } else if (hour[0].value === '0') {
-        setHour([hourOptions[1]]);
-      }
-
-      setHourOptions(_constants.DEFAULT_HOUR_OPTS_EVERY);
-    } else {
-      setHourOptions(_constants.DEFAULT_HOUR_OPTS_AT);
-    }
-  }, [hourAtEvery]);
-
-  _react["default"].useEffect(function () {
-    if (!isAdmin && hour.length > 1) {
-      setHour(function (prevHour) {
-        return [prevHour[0]];
-      });
-    }
-  }, [isAdmin]);
-
   return _react["default"].createElement(_Box["default"], {
     display: "flex",
     pt: 1,
