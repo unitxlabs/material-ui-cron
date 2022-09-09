@@ -27,6 +27,15 @@ export default function Period() {
   const classes = useStyles();
   const isAdmin = useRecoilValue(isAdminState);
   const resolvedLocale = useRecoilValue(localeState);
+  React.useEffect(() => {
+    const periods = getPeriodOptions(resolvedLocale.periodOptions);
+
+    for (const p of periods) {
+      if (p.value === period.value) {
+        setPeriod(p);
+      }
+    }
+  }, [resolvedLocale]);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,

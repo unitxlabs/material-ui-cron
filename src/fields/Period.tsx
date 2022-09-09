@@ -34,7 +34,14 @@ export default function Period() {
   const isAdmin = useRecoilValue(isAdminState)
 
   const resolvedLocale = useRecoilValue(localeState)
-
+  React.useEffect(() => {
+    const periods = getPeriodOptions(resolvedLocale.periodOptions);
+    for (const p of periods) {
+      if (p.value === period.value) {
+        setPeriod(p);
+      }
+    }
+  }, [resolvedLocale])
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
       <Typography classes={{ root: classes.every }} mr={0.625} style={{alignSelf: 'center', visibility: 'visible', maxWidth: 'none', height: 'auto'}}>

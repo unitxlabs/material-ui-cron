@@ -110,6 +110,10 @@ function DayOfMonth() {
       setPossibleEndDays = _React$useState6[1];
 
   _react["default"].useEffect(function () {
+    setDayOfMonthAtEvery((0, _constants.onEveryOptions)(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+  }, [resolvedLocale]);
+
+  _react["default"].useEffect(function () {
     var startIndex = possibleStartDays.findIndex(function (x) {
       return x.value === startMonth.value;
     });

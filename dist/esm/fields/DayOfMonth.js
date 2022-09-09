@@ -48,6 +48,9 @@ export default function DayOfMonth() {
   const [possibleStartDays, setPossibleStartDays] = React.useState(DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD);
   const [possibleEndDays, setPossibleEndDays] = React.useState(DEFAULT_DAY_OF_MONTH_OPTS_WITH_ORD);
   React.useEffect(() => {
+    setDayOfMonthAtEvery(onEveryOptions(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel)[0]);
+  }, [resolvedLocale]);
+  React.useEffect(() => {
     const startIndex = possibleStartDays.findIndex(x => x.value === startMonth.value);
     const limitedPossibleTimeRange = possibleEndDays.map((possibleEndTime, index) => _objectSpread(_objectSpread({}, possibleEndTime), {}, {
       disabled: index <= startIndex
