@@ -29,7 +29,7 @@ var periodState = (0, _recoil.atom)({
 
       var resolvedLocale = _get(localeState);
 
-      return (0, _constants.getPeriodOptions)(resolvedLocale.periodOptions)[1];
+      return (0, _constants.getPeriodOptions)(resolvedLocale.periodOptions)[0];
     }
   })
 });

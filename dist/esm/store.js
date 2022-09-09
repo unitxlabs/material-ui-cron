@@ -14,7 +14,7 @@ export const periodState = atom({
       get
     }) => {
       const resolvedLocale = get(localeState);
-      return getPeriodOptions(resolvedLocale.periodOptions)[1];
+      return getPeriodOptions(resolvedLocale.periodOptions)[0];
     }
   })
 });

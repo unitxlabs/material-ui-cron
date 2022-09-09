@@ -26,7 +26,7 @@ export const periodState = atom<SelectOptions>({
     key: 'periodStateDefaultSelector',
     get: ({ get }) => {
       const resolvedLocale = get(localeState)
-      return getPeriodOptions(resolvedLocale.periodOptions)[1]
+      return getPeriodOptions(resolvedLocale.periodOptions)[0]
     },
   }),
 })

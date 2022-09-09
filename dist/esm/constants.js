@@ -28,6 +28,9 @@ export const generateOrdinalOptions = (start, end) => {
   });
 };
 export const getPeriodOptions = periodOptionLabels => [{
+  label: periodOptionLabels[0],
+  value: 'hour'
+}, {
   label: periodOptionLabels[1],
   value: 'day'
 }, {
