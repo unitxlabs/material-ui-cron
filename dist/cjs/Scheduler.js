@@ -96,7 +96,10 @@ function Scheduler(props) {
 
   _react["default"].useEffect(function () {
     setPeriodIndex((0, _utils.getPeriodIndex)(period));
-    resetDayOfWeek();
+
+    if (period.value == 'month') {
+      resetDayOfWeek();
+    }
   }, [period]);
 
   _react["default"].useEffect(function () {

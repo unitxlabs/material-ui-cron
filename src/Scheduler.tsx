@@ -66,7 +66,9 @@ export default function Scheduler(props: SchedulerProps) {
 
   React.useEffect(() => {
     setPeriodIndex(getPeriodIndex(period))
-    resetDayOfWeek()
+    if (period.value == 'month') {
+      resetDayOfWeek();
+    }
   }, [period])
 
   React.useEffect(() => {

@@ -75,8 +75,13 @@ export default function DayOfMonth() {
   )
 
   React.useEffect(() => {
-    setDayOfMonthAtEvery(onEveryOptions(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel)[0]);
-  }, [resolvedLocale])
+    const opts = onEveryOptions(resolvedLocale.onOptionLabel, resolvedLocale.everyOptionLabel);
+    if (dayOfMonthAtEvery.value == opts[0].value) {
+      setDayOfMonthAtEvery(opts[0]);
+    } else {
+      setDayOfMonthAtEvery(opts[1]);
+    }
+  }, [resolvedLocale]);
 
   React.useEffect(() => {
     const startIndex = possibleStartDays.findIndex(
