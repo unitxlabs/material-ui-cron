@@ -27,6 +27,18 @@ export default function Week() {
   const [week, setWeek] = useRecoilState(weekState);
   const resolvedLocale = useRecoilValue(localeState);
   const [weekOptions, setWeekOptions] = React.useState(defaultWeekOptions(resolvedLocale.weekDaysOptions));
+  React.useEffect(() => {
+    const days = week.map(day => day.value);
+    let translatedWeek = [];
+
+    for (const opt of defaultWeekOptions(resolvedLocale.weekDaysOptions)) {
+      if (days.includes(opt.value)) {
+        translatedWeek.push(opt);
+      }
+    }
+
+    setWeek(translatedWeek);
+  }, [resolvedLocale]);
   return React.createElement(Box, {
     display: "flex",
     pt: 1,

@@ -31,6 +31,17 @@ export default function Week() {
   const [weekOptions, setWeekOptions] = React.useState(
     defaultWeekOptions(resolvedLocale.weekDaysOptions)
   )
+  
+  React.useEffect(() => {
+    const days = week.map(day => day.value);
+    let translatedWeek = [];
+    for (const opt of defaultWeekOptions(resolvedLocale.weekDaysOptions)) {
+      if (days.includes(opt.value)) {
+        translatedWeek.push(opt);
+      }
+    }
+    setWeek(translatedWeek);
+  }, [resolvedLocale]);
 
   return (
     <Box display='flex' pt={1} pb={1} mt={1} mb={1}>
